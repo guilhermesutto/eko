@@ -1,0 +1,44 @@
+mixin footer-standard(obj)
+	footer.section.footer-standard.bg-gray-modern
+		.section-wave
+			svg(x='0px', y='0px', viewBox='0 0 1920 45', width="1920", height="45px", preserveAspectRatio="none")
+				style(type='text/css').
+				path(d='M1920,0c-82.8,0-108.8,44.4-192,44.4c-78.8,0-116.5-43.7-192-43.7c-77.1,0-115.9,44.4-192,44.4c-78.2,0-114.6-44.4-192-44.4c-78.4,0-115.3,44.4-192,44.4C883.1,45,841,0.6,768,0.6C691,0.6,652.8,45,576,45C502.4,45,461.9,0.6,385,0.6C306.5,0.6,267.9,45,191,45C115.1,45,78,0.6,0,0.6V45h1920V0z')
+		.footer-standard-main
+			.container
+				.row.row-50
+					.col-lg-4: .inset-right-1
+						h4 About Us
+						p=obj.about
+
+					.col-sm-6.col-md-5.col-lg-4: .box-1
+						h4 Contact Information
+						ul.list-sm.list-footer
+							li.object-inline
+								span.icon.icon-sm.mdi.mdi-map-marker.text-gray-700
+								a.link-default(href='#') 2130 Fulton Street #[br] San Diego, CA 94117-1080 USA
+
+							li.object-inline
+								span.icon.icon-sm.mdi.mdi-phone.text-gray-700
+								a.link-default(href='tel:#') 1-800-1234-678
+
+							li.object-inline
+								span.icon.icon-sm.mdi.mdi-email.text-gray-700
+								a.link-default(href='mailto:#') info@demolink.org
+
+					.col-sm-6.col-md-7.col-lg-4
+						h4 Newsletter
+						p Sign up to our newsletter and be the first to know about latest news, special offers, events, and discounts.
+						// RD Mailform
+						form.rd-form.rd-mailform.form-inline(data-form-output="form-output-global", data-form-type='subscribe', method='post', action='bat/rd-mailform.php')
+							.form-wrap
+								input.form-input(id="subscribe-form-2-email" type="email" name="email" data-constraints="@Email @Required")
+								label.form-label(for="subscribe-form-2-email") E-mail
+							.form-button
+								button.button.button-primary.button-icon.button-icon-only.button-winona(type="submit" aria-label='submit')
+									span.icon.mdi.mdi-email-outline
+
+
+		.container
+			.footer-standard-aside.justify-content-center
+				+rights

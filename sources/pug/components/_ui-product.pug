@@ -1,0 +1,17 @@
+mixin procuct(obj)
+
+	article.card-modern.wow.fadeInUp(data-wow-delay='.05s')&attributes(attributes)
+		.card-modern-left
+			+png(obj.img)
+		.card-modern-body
+			h4
+				a(href=obj.link).card-modern-title= obj.title
+			.card-modern-price
+				span $
+					= obj.price
+			.card-modern-info
+				span.icon.icon-sm.mdi.mdi-information-outline
+				span.card-modern-info-text= obj.info
+			.card-modern-text
+				p= obj.text
+

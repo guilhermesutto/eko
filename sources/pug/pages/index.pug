@@ -1,0 +1,97 @@
+extends  ../_skeleton
+
+//- Includes
+
+
+block variables
+	- var activeCategory = 'home'
+	- var pageName = 'Home'
+
+block page
+	// Page Header
+	include ../sections/_header-minimal
+
+	// Slider
+	include ../sections/_section-slider-business
+
+	// A Few Words About Us
+	include ../sections/_section-about-5
+
+	// Small Features
+	section.section.section-lg.bg-gray-100
+		.container
+			.row.row-30
+				.col-sm-6.col-lg-4.wow-outer
+					// Box Minimal
+					article.box-minimal
+						.box-minimal-icon.mdi.mdi-shield.wow.fadeIn
+						.box-minimal-main.wow-outer
+							h4.box-minimal-title.wow.slideInDown Protection from Bacteria
+							p.wow.fadeInUpSmall Though spring water is naturally clean, we try our best to make sure that our water is bacteria-free at all production stages.
+
+				.col-sm-6.col-lg-4.wow-outer
+					// Box Minimal
+					article.box-minimal
+						.box-minimal-icon.mdi.mdi-leaf.wow.fadeIn(data-wow-delay='.1s')
+						.box-minimal-main.wow-outer
+							h4.box-minimal-title.wow.slideInDown(data-wow-delay='.1s') No Contaminants
+							p.wow.fadeInUpSmall(data-wow-delay='.1s') We control the production process of our water to make sure you receive the best product from the company, which you can trust.
+
+				.col-sm-6.col-lg-4.wow-outer
+					// Box Minimal
+					article.box-minimal
+						.box-minimal-icon.mdi.mdi-water.wow.fadeIn(data-wow-delay='.2s')
+						.box-minimal-main.wow-outer
+							h4.box-minimal-title.wow.slideInDown(data-wow-delay='.2s') Automated Bottling Lines
+							p.wow.fadeInUpSmall(data-wow-delay='.2s') The process of bottling the spring water at our plant is fully automatized. However, we always control it to ensure the high quality.
+
+	// Woman CTA
+	include ../sections/_section-woman-cta
+
+	// Section Products
+	include ../sections/_section-products
+
+	// Services
+	section.section.section-lg.bg-gray-100.text-center
+		.container
+			.box-4: h3.wow-outer: span.wow.slideInUp We Work to Offer the Best Customer Service
+			.row.row-30
+				.col-sm-6.col-lg-4.wow-outer
+					// Box Creative
+					article.box-creative.wow.slideInLeft
+						.box-creative-icon.mdi.mdi-cellphone-android
+						h4.box-creative-title: a(href='#') Online Ordering
+						p Our online store is always open to customers who prefer to drink quality spring water. You can also order Water products via our partners’ websites.
+
+				.col-sm-6.col-lg-4.wow-outer
+					// Box Creative
+					article.box-creative.wow.slideInLeft(data-wow-delay='.1s')
+						.box-creative-icon.fl-bigmug-line-graphical8
+						h4.box-creative-title: a(href='#') Free Delivery
+						p If your order more than 6 bottles of our water we will deliver it to your home or office for free. This offer applies only to online orders placed till 8 PM.
+
+				.col-sm-6.col-lg-4.wow-outer
+					// Box Creative
+					article.box-creative.wow.slideInLeft(data-wow-delay='.2s')
+						.box-creative-icon.mdi.mdi.mdi-heart-outline
+						h4.box-creative-title: a(href='#') Friendly Managers
+						p Our team of friendly managers is always ready to help you choose and order the best sparkling or spring water. Feel free to contact us for more information.
+
+	// Testimonials
+	section.section.section-lg.text-center
+		.container
+			h3 Testimonials
+			include ../includes/_owl-testimonials-2-cols
+
+
+	// Latest Blog Posts
+	section.section.section-lg.bg-gray-100.section-wave-offset
+		.container
+			h3.wow-outer.text-center: span.wow.slideInDown Latest Blog Posts
+			include ../includes/_row-news-post-layout
+
+	// Page Footer
+	include ../sections/_footer-standard
+	+footer-standard({
+		about: 'Water is one of the leading spring water providers in the USA. We bottle and deliver bacteria-free spring water throughout the country covering all water needs and tastes. We are proud to be the nation’s #1 water provider!'
+	})

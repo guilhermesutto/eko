@@ -1,0 +1,35 @@
+extends  ../_skeleton
+
+//- Includes
+block variables
+	- var activeCategory = 'pages'
+	- var pageName = 'Pricing'
+
+block page
+	include ../sections/_header-minimal
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName]
+	})
+
+	// 4 Column Layout
+	section.section.section-lg.text-center
+		.container
+			h3 4 Column Layout
+			p: span.text-width-1 Morbi dignissim tortor eu libero tempus, in rhoncus odio eleifend. Curabitur faucibus nunc sit amet justo condimentum, ac pellentesque sapien vestibulum.
+			include ../includes/_pricing-group-modern
+				
+
+	// 3 Column Layout
+	section.section.section-lg.bg-gray-100.section-wave-offset
+		.container
+			h3.text-center 3 Column Layout
+			include ../includes/_row-pricing-3-columns
+						
+			
+	// Page Footer
+	include ../sections/_footer-standard
+	+footer-standard({
+		about: 'Water is one of the leading spring water providers in the USA. We bottle and deliver bacteria-free spring water throughout the country covering all water needs and tastes. We are proud to be the nation’s #1 water provider!'
+	})

@@ -1,0 +1,51 @@
+section.section.section-lg.bg-gray-100
+	.container
+		h3.wow-outer.text-center: span.wow.slideInUp Testimonials & Video
+		.row.row-50.justify-content-center.justify-content-lg-between
+			.col-md-10.col-lg-5.wow-outer
+				.owl-carousel.owl-carousel-video.wow.slideInLeft(
+				data-items='1'
+				data-dots='true'
+				data-nav='false'
+				data-loop='true'
+				data-margin='30'
+				data-stage-padding='0'
+				data-mouse-drag="false")
+
+
+					blockquote.quote-modern
+						+quote-mark.quote-modern-mark
+						.quote-modern-text
+							p Aliquam interdum tellus placerat risus ullamcorper ornare. Praesent at sagittis velit. Vivamus vulputate aliquet bibendum. Donec ac mauris ac tellus sollicitudin lobortis in non nunc. In sit amet orci lacinia, lobortis orci eu, auctor leo.
+						.quote-modern-meta
+							.quote-modern-avatar: +jpg('testimonials-person-1-96x96')
+							.quote-modern-info
+								cite.quote-modern-cite Kelly McMillan
+								p.quote-modern-caption Regular Client
+
+					blockquote.quote-modern
+						+quote-mark.quote-modern-mark
+						.quote-modern-text
+							p Sed nec elit sodales, imperdiet dolor in, suscipit mi. Donec in elit ligula. Aenean euismod euismod enim, sit amet consectetur diam laoreet id. In turpis arcu, condimentum sit amet tempus quis, ornare in felis.
+						.quote-modern-meta
+							.quote-modern-avatar: +jpg('testimonials-person-3-96x96')
+							.quote-modern-info
+								cite.quote-modern-cite Albert Webb
+								p.quote-modern-caption Regular Client
+
+					blockquote.quote-modern
+						+quote-mark.quote-modern-mark
+						.quote-modern-text
+							p Praesent aliquet volutpat blandit. Ut tellus arcu, scelerisque sed posuere a, posuere non eros. Maecenas nulla lectus, tristique eu enim non, fringilla scelerisque nulla. Nulla imperdiet accumsan massa. Etiam massa mi, pretium et arcu vitae.
+						.quote-modern-meta
+							.quote-modern-avatar: +jpg('testimonials-person-2-96x96')
+							.quote-modern-info
+								cite.quote-modern-cite Harold Barnett
+								p.quote-modern-caption Regular Client
+
+			.col-md-10.col-lg-6.wow-outer
+				.thumbnail-video-1.bg-gray-700.wow.slideInLeft
+					.embed-responsive.embed-responsive-16by9: iframe(width='570' height='320' src='//www.youtube.com/embed/QZzbm-FrkGk' allowfullscreen='')
+					.thumbnail-video__overlay.video-overlay(style='background-image: url(images/video-preview-1-570x320.jpg)')
+						.button-video
+						h5 Lawrence Alvarado

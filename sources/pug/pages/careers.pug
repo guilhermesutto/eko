@@ -1,0 +1,104 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-career-classic
+
+block variables
+	- var activeCategory = 'pages'
+	- var pageName = 'Careers'
+
+block page 
+	// Page Header
+	include ../sections/_header-minimal
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName]
+	})
+
+	// Working at CaseCraft
+	section.section.section-lg
+		.container
+			.row.row-50.justify-content-center.justify-content-lg-between.flex-lg-row-reverse
+				.col-md-10.col-lg-6.col-xl-5
+					h3 Working at Water
+					p In non pellentesque leo. Vivamus lobortis, dui eu facilisis pellentesque, urna nulla rhoncus purus, eget egestas nisl lacus id nibh. Integer imperdiet, eros vel vehicula porttitor, tortor leo luctus justo, eu placerat nisi quam id dolor. Mauris tempus, erat vel pharetra vehicula, orci eros ornare tortor, vulputate condimentum metus purus et metus.
+					a.button.button-lg.button-primary.button-winona(href='about-us.html') Learn more
+
+				.col-md-10.col-lg-6.col-xl-6
+					+jpg('careers-1-570x368', 'img-responsive')
+
+	// Available Vacancies
+	section.section.section-lg.bg-gray-100.text-center.section-wave-offset
+		.container
+			h3 Available Vacancies
+			.row.row-45
+				.col-md-6.col-lg-4
+					+career-classic({
+						title: 'Sales Manager',
+						list: [
+							{ iconClass: 'mdi mdi-calendar-clock', text: 'Full Time' },
+							{ iconClass: 'mdi mdi-map-marker', text: 'San Diego' }
+						]
+					})
+						p Tabes velums, tanquam camerarius tata. A falsis, urbs superbus xiphias. Nunquam examinare abnoba. Humani generiss observare, tanquam tus.
+
+				.col-md-6.col-lg-4
+					+career-classic({
+						title: 'Plant Operator',
+						list: [
+							{iconClass: 'mdi mdi-calendar-clock', text: 'Full Time'},
+							{iconClass: 'mdi mdi-map-marker', text: 'San Diego'}
+						]
+					})
+						p Superbus uria recte attrahendams bursa est.  Lotus, noster classiss recte locus de pius, flavum bubo. Diatrias sunt particulas de flavum ignigena.
+
+				.col-md-6.col-lg-4
+					+career-classic({
+						title: 'Office Manager',
+						list: [
+							{iconClass: 'mdi mdi-calendar-clock', text: 'Full Time'},
+							{iconClass: 'mdi mdi-map-marker', text: 'San Diego'}
+						]
+					})
+						p Era de salvus fluctus, promissio lumen! Magister de castus aonides, magicae adelphis! Cum calcaria credere, omnes lunaes reperire grandis, mirabilis accolaes.
+
+				.col-md-6.col-lg-4
+					+career-classic({
+						title: 'Marketer',
+						list: [
+							{iconClass: 'mdi mdi-calendar-clock', text: 'Full Time'},
+							{iconClass: 'mdi mdi-map-marker', text: 'San Diego'}
+						]
+					})
+						p Byssuss potus! Finiss peregrinatione in antenna! Cum zirbus ire, omnes rectores demitto rusticus, orgiaes. Cum fluctus velum, elogiumes imperium castus.
+
+				.col-md-6.col-lg-4
+					+career-classic({
+						title: 'Customer Care Manager',
+						list: [
+							{iconClass: 'mdi mdi-calendar-clock', text: 'Full Time'},
+							{iconClass: 'mdi mdi-map-marker', text: 'San Diego'}
+						]
+					})
+						p Heu, luna! Sunt racanaes imitari bassus, lotus aususes. Orexiss mori, tanquam velox extum. Raptus, nobilis bullas etiam aperto de placidus, albus ventus.
+
+				.col-md-6.col-lg-4
+					+career-classic({
+						title: 'Warehouse Worker',
+						list: [
+							{iconClass: 'mdi mdi-calendar-clock', text: 'Full Time'},
+							{iconClass: 'mdi mdi-map-marker', text: 'San Diego'}
+						]
+					})
+						p Ecce, secundus devirginato! Cum ignigena nocere, omnes tumultumquees acquirere superbus, clemens victrixes. Compater, domina, et extum.
+
+
+			a.button.button-lg.button-primary.button-winona(href='#') Join Us
+
+
+	// Page Footer
+	include ../sections/_footer-standard
+	+footer-standard({
+		about: 'Water is one of the leading spring water providers in the USA. We bottle and deliver bacteria-free spring water throughout the country covering all water needs and tastes. We are proud to be the nation’s #1 water provider!'
+	})

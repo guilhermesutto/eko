@@ -1,0 +1,87 @@
+-
+	var
+		htmlClass = "wide wow-animation",
+		fonts = "//fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800%7COswald:300,400,500",
+		//{DEL GRANTER USERPACKAGE}
+		layoutPanel = true,
+		//{DEL}
+		navbarCounter = 0,
+		logo = {
+			name: 'CaseCraft',
+			default: { trueSize: 'logo-default-132x34', retina: 'logo-default-250x64' },
+			inverse: { trueSize: 'logo-inverse-132x34', retina: 'logo-inverse-250x64' },
+			light: { trueSize: 'logo-light-141x21', retina: 'logo-light-281x45' }
+		},
+		links = {
+			post: 'single-blog-post.html',
+			getTemplate: 'https://themeforest.net/item/casecraft-elegant-business-and-financial-company-multipage-html-template/21536362'
+		},
+		colors = {
+			primary: '#286efc'
+		},
+		menu = [
+			{
+				title: 'Home',
+				category: 'home',  
+				link: 'index.html'
+			},
+			{
+				title: 'Water',
+				category: 'water',
+				link: 'water.html'
+			},
+
+			{
+				title: 'Pages', 
+				category: 'pages',
+				link: '#',
+				megamenu: [
+					{
+					list: [
+						{ title: 'Careers' },
+						{ title: 'Search results' },
+						{ title: 'About Us' },
+						{ title: 'Testimonials' },
+						{ title: 'What We Offer' },
+						{ title: 'Team' }
+						]
+					},
+					{
+						list: [
+							{ title: '404 Page' },
+							{ title: '503 Page' },
+							{ title: 'Coming Soon' },
+							{ title: 'Under Construction' },
+							{ title: 'Progress bars' },
+							{ title: 'Pricing' }
+						]
+					},
+
+					{
+						list: [
+							{ title: 'Typography' },
+							{ title: 'Buttons' },
+							{ title: 'Forms' },
+							{ title: 'Tabs' },
+							{ title: 'Terms of Use' },
+							{ title: 'Accordions' }
+						]
+					}
+				]
+			},
+			{
+				title: 'Blog',
+				category: 'blog',
+				link: 'blog.html',
+				dropdown: [
+					{
+					title: 'Single Blog Post',
+					link: links.post
+					}
+				]
+			},
+			{
+				title: 'Contacts',
+				category: 'contacts'
+			}
+		];

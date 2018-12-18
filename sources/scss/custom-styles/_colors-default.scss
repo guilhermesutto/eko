@@ -1,0 +1,9 @@
+$primary: #286efc;
+
+$primary-lighten: lighten($primary, 5%);
+$primary-darken: darken(saturate(adjust_hue($primary, 0.3930481283422296), 0.8372770294866996%), 28.431372549019613%);
+$primary-darker: darken(desaturate(adjust_hue($primary, -0.08080808080805468), 38.30576845502219%), 24.313725490196077%);
+
+
+//$gray-700: darken(desaturate(adjust_hue($primary, 4.363636363636374), 64.91783506708882%), 41.1764705882353%); //#29293a
+ $gray-700: $gray-800; //#29293a

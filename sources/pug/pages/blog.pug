@@ -1,0 +1,78 @@
+extends  ../_skeleton
+
+block variables
+	- var activeCategory = 'blog'
+	- var pageName = 'Blog'
+
+block page 
+	// Page Header
+	include ../sections/_header-minimal
+
+	+breadcrumbs({
+		title: 'Our News',
+		category: activeCategory,
+		path: [pageName]
+	})
+
+	section.section.section-lg.section-wave-offset
+		.container
+			.row.row-50.row-xxl-70
+				.col-md-6.scaleFadeInWrap
+					// Post Modern
+					.wow.scaleFadeIn
+						article.post-modern
+							a.post-modern-media(href=links.post): +jpg('grid-blog-1-571x353')
+							h4.post-modern-title: a(href=links.post) The Health Benefits of Drinking Spring Water
+							ul.post-modern-meta
+								li by Theresa Barnes
+								li: time(datetime='2018') Apr 21, 2018 at 12:05 pm
+								li: a.button-winona(href='#') News
+							p Pellentesque finibus est sapien, sit amet feugiat arcu commodo sit amet. Pellentesque iaculis eros eu enim sodales, sed ornare dui aliquam. Praesent faucibus mi a quam congue, sit amet sollicitudin est rutrum
+
+				.col-md-6.scaleFadeInWrap
+					// Post Modern
+					.wow.scaleFadeIn(data-wow-delay='.1s')
+						article.post-modern
+							a.post-modern-media(href=links.post): +jpg('grid-blog-2-571x353')
+							h4.post-modern-title: a(href=links.post) Top 10 Facts About Our Bottled Water
+							ul.post-modern-meta
+								li by Theresa Barnes
+								li: time(datetime='2018') Apr 21, 2018 at 12:05 pm
+								li: a.button-winona(href='#') News
+							p Integer aliquet eleifend pulvinar. Nulla eget maximus tortor. Praesent vehicula metus sollicitudin, dictum libero vel, efficitur sem. Proin et convallis eros. Sed convallis ac mi non rutrum. Sed vehicula blandit tellus eget blandit.
+
+				.col-md-6.scaleFadeInWrap
+					// Post Modern
+					.wow.scaleFadeIn
+						article.post-modern
+							a.post-modern-media(href=links.post): +jpg('grid-blog-3-571x353')
+							h4.post-modern-title: a(href=links.post) The Secrets of Modern Spring Water
+							ul.post-modern-meta
+								li by Theresa Barnes
+								li: time(datetime='2018') Apr 21, 2018 at 12:05 pm
+								li: a.button-winona(href='#') News
+							p Integer aliquet eleifend pulvinar. Nulla eget maximus tortor. Praesent vehicula metus sollicitudin, dictum libero vel, efficitur sem. Proin et convallis eros. Sed convallis ac mi non rutrum. Sed vehicula blandit tellus eget blandit.
+
+				.col-md-6.scaleFadeInWrap
+					// Post Modern
+					.wow.scaleFadeIn(data-wow-delay='.1s')
+						article.post-modern
+							a.post-modern-media(href=links.post): +jpg('grid-blog-4-571x353')
+							h4.post-modern-title: a(href=links.post) Spring Water vs. Sparkling Water
+							ul.post-modern-meta
+								li by Theresa Barnes
+								li: time(datetime='2018') Apr 21, 2018 at 12:05 pm
+								li: a.button-winona(href='#') News
+							p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget facilisis lacus. Aenean semper tincidunt rhoncus. Vestibulum semper in neque eget pellentesque. Phasellus quis porta nisl, ac ultrices mauris.
+
+			.pagination
+				.page-item.active: a.page-link.button-winona(href='#') 1
+				.page-item: a.page-link.button-winona(href='#') 2
+				.page-item: a.page-link.button-winona(href='#') 3
+				.page-item: a.page-link.button-winona(href='#') 4
+
+	// Page Footer
+	include ../sections/_footer-standard
+	+footer-standard({
+		about: 'Water is one of the leading spring water providers in the USA. We bottle and deliver bacteria-free spring water throughout the country covering all water needs and tastes. We are proud to be the nation’s #1 water provider!'
+	})

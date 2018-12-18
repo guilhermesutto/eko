@@ -1,0 +1,82 @@
+.slick-widget-testimonials.wow.fadeIn
+	.slick-slider.carousel-child#child-carousel(
+	data-for='.carousel-parent'
+	data-arrows='true'
+	data-loop='true'
+	data-dots='false'
+	data-swipe='true'
+	data-items='1'
+	data-sm-items='3'
+	data-md-items='5'
+	data-lg-items='5'
+	data-xl-items='5'
+	data-center-mode='true'
+	data-slide-to-scroll='1')
+		.item.wow-outer: +jpg('testimonials-person-1-96x96').wow.slideInLeft
+		.item.wow-outer: +jpg('testimonials-person-2-96x96').wow.slideInLeft
+		.item.wow-outer: +jpg('testimonials-person-3-96x96').wow.slideInLeft
+		.item.wow-outer: +jpg('testimonials-person-4-96x96').wow.slideInLeft
+		.item.wow-outer: +jpg('testimonials-person-5-96x96').wow.slideInLeft
+		.item.wow-outer: +jpg('testimonials-person-3-96x96').wow.slideInLeft
+
+
+	// Slick Carousel
+	.slick-slider.carousel-parent(
+	data-arrows='false'
+	data-loop='true'
+	data-dots='false'
+	data-swipe='false'
+	data-items='1'
+	data-fade='true'
+	data-child='#child-carousel'
+	data-for='#child-carousel')
+		.item
+			// Quote Light 1
+			blockquote.quote-light
+				cite.quote-light-cite Kelly McMillan
+				p.quote-light-caption Regular Client
+				+quote-mark.quote-light-mark
+				.quote-light-text: p Maecenas nec congue velit. Suspendisse pretium ut metus sit amet pellentesque. Praesent convallis pellentesque tellus, in egestas dolor consectetur dapibus.
+
+		.item
+			// Quote Light 2
+			blockquote.quote-light
+				cite.quote-light-cite Harold Barnett
+				p.quote-light-caption Regular Client
+				+quote-mark.quote-light-mark
+				.quote-light-text: p Quisque et elit nec risus ultrices ullamcorper et ac libero. In est ante, volutpat non pellentesque in, efficitur quis magna. In sollicitudin nunc quis euismod dignissim.
+
+		.item
+			// Quote Light 3
+			blockquote.quote-light
+				cite.quote-light-cite Albert Webb
+				p.quote-light-caption Regular Client
+				+quote-mark.quote-light-mark
+				.quote-light-text: p Phasellus accumsan imperdiet interdum. Praesent condimentum porttitor arcu. Nunc semper interdum leo at commodo.Phasellus accumsan imperdiet interdum. Praesent condimentum porttitor arcu.
+
+		.item
+			// Quote Light 4 
+			blockquote.quote-light
+				cite.quote-light-cite Samantha Lee
+				p.quote-light-caption Sales Manager at Hillplan
+				+quote-mark.quote-light-mark
+				.quote-light-text: p Sed vehicula molestie nibh, in malesuada nulla malesuada eget. Proin efficitur arcu eu porta iaculis. Quisque lectus tellus vehicula molestie nibh, in malesuada nulla malesuada eget. Proin efficitur.
+
+		.item
+			// Quote Light 5
+			blockquote.quote-light
+				cite.quote-light-cite Bill Warner
+				p.quote-light-caption Regular Client
+				+quote-mark.quote-light-mark
+				.quote-light-text: p Aenean quis felis venenatis justo faucibus tincidunt. Morbi dignissim tortor eu libero tempus, in rhoncus odio eleifend. Curabitur faucibus nunc sit amet justo condimentum, ac pellentesque sapien vestibulum.
+
+		.item
+			// Quote Light 3
+			blockquote.quote-light
+				cite.quote-light-cite Albert Webb
+				p.quote-light-caption Regular Client
+				+quote-mark.quote-light-mark
+				.quote-light-text: p Nullam gravida ante sit amet ipsum finibus, ut posuere lectus ornare. Duis ornare lorem urna. Integer vitae euismod magna.Nullam gravida ante sit amet ipsum finibus, ut posuere lectus ornare. Duis ornare lorem urna.
+
+
+							

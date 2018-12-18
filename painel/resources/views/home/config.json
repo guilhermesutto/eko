@@ -1,0 +1,66 @@
+{
+	"index":
+	{
+		"scripts":
+		[
+			"/assets/scripts/modules/areas.js"
+		],
+
+		"styles":
+		[
+
+		],
+
+		"fields":
+		[
+
+		],
+
+		"modals":
+		[
+
+		],
+
+		"list_fields":
+		{
+			"id":"#",
+			"id_pai":"Marca Pai",
+			"titulo":"Área",
+			"url":"URL",
+			"order_by":"Ordenação",
+			"ativo":"Status"
+		}
+	},
+
+	"banner":
+	{
+		"scripts":
+		[
+			"/eko/painel/public/js/sliders.js"
+		],
+
+		"styles":
+		[
+
+		],
+
+		"fields":
+		[
+			{
+				"label":false,
+				"name":"imagensBanner",
+				"translate":"Imagens do Banner",
+				"type":"template",
+				"template": "default_imagem_multiple",
+				"id":"imagensBanner",
+				"class":"",
+				"validate":""
+			}
+		],
+
+		"modals":
+		[
+
+		]
+	}
+}

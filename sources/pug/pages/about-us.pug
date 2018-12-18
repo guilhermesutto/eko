@@ -1,0 +1,24 @@
+extends  ../_skeleton
+
+block variables
+	- var activeCategory = 'pages'
+	- var pageName = 'About Us'
+
+block page 
+	// Page Header
+	include ../sections/_header-minimal
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName]
+	})
+
+	include ../sections/_section-about-1
+
+	include ../sections/_section-our-history
+
+	// Page Footer
+	include ../sections/_footer-standard
+	+footer-standard({
+		about: 'Water is one of the leading spring water providers in the USA. We bottle and deliver bacteria-free spring water throughout the country covering all water needs and tastes. We are proud to be the nation’s #1 water provider!'
+	})

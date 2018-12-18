@@ -1,0 +1,144 @@
+extends  ../_skeleton
+
+block variables
+	- var activeCategory = 'blog'
+	- var pageName = 'Single Blog Post'
+
+block page 
+	// Page Header
+	include ../sections/_header-minimal
+
+	+breadcrumbs({
+		title: 'Our News',
+		category: activeCategory,
+		path: [pageName]
+	})
+
+	section.section.section-lg.section-wave-offset
+		.container
+			.row.row-50
+				.col-lg-8
+					article.post-creative
+						h3.post-creative-title Top 10 Facts About Our Bottled Water	and Its Benefits
+						ul.post-creative-meta
+							li
+								span.icon.mdi.mdi-calendar-clock
+								time(datetime='2018') May 9, 2018 at 6:09 pm
+							li
+								span.icon.mdi.mdi-tag-multiple
+								a(href='#') News
+
+						h4 Proin non cursus justo, a varius nisi. Cras varius vel metus quis varius. Nam tempor molestie eros, sit amet fringilla sapien imperdiet et. In feugiat consequat metus non maximus. Aenean dictum nisl id turpis tincidunt, eu efficitur mi egestas.
+
+						+jpg('single-blog-post-1-770x458')
+
+						p Integer aliquet eleifend pulvinar. Nulla eget maximus tortor. Praesent vehicula metus sollicitudin, dictum libero vel, efficitur sem. Proin et convallis eros. Sed convallis ac mi non rutrum. Sed vehicula blandit tellus eget blandit. Morbi quis tincidunt nulla, ac volutpat lectus. Proin ac ante at leo auctor suscipit a ut nulla. Donec molestie, velit at condimentum consequat, risus libero placerat felis, et consequat justo nisi non libero. Maecenas risus enim, pulvinar vel justo in, consequat pharetra dolor. Integer id ullamcorper erat, vel eleifend ligula.
+						p Maecenas tempor turpis sit amet blandit vulputate. In hac habitasse platea dictumst. In rutrum fermentum nisi, sit amet scelerisque mauris condimentum vel. Etiam imperdiet augue sed dictum facilisis. Donec cursus odio eros, ac porta sapien venenatis vitae.
+
+						// Quote Light
+						blockquote.quote-light
+							+quote-mark.quote-light-mark
+							.quote-light-text
+								p Nunc lobortis a lorem et rhoncus. Nullam eget venenatis est. Nullam auctor eros ac volutpat volutpat.
+
+						+jpg('single-blog-post-2-770x458')
+
+						p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget facilisis lacus. Aenean semper tincidunt rhoncus. Vestibulum semper in neque eget pellentesque. Phasellus quis porta nisl, ac ultrices mauris. Pellentesque lorem quam, aliquet vitae molestie luctus, consequat ut diam. Duis vitae iaculis orci, ac convallis diam. Duis dapibus, arcu condimentum viverra mattis, velit ipsum eleifend ligula, id tempus lectus eros quis nunc.
+						p Aliquam consectetur mauris sed fermentum vehicula. Nam faucibus, nisi nec volutpat dictum, ante ex maximus diam, ac lacinia erat ipsum id turpis. In at nulla aliquet, efficitur elit eu, tempus sapien. Duis condimentum est a nulla gravida, nec viverra diam porttitor. Nullam justo ex, tristique id nisl nec, vulputate placerat velit. Etiam ultricies ornare erat non fringilla. Nulla sollicitudin purus at est sodales, ut malesuada ante consequat.
+
+						ul.post-creative-footer
+							li Share this post!
+							li
+								include ../includes/_group-social-buttons
+
+					.section-sm
+						h3 Comments
+						.comment-classic-group
+							// Comment Classic
+							article.comment-classic
+								figure.comment-classic-figure: +jpg('comment-1-48x48', 'comment-classic-image')
+								.comment-classic-main
+									p.comment-classic-name Albert Webb
+									.comment-classic-text
+										p Integer eu neque egestas, interdum enim non, scelerisque enim. Sed malesuada tortor eu mi tincidunt, at vehicula dolor bibendum.
+									ul.comment-classic-meta
+										li: time(datetime='2018') May, 9 2018 at 9:06 am
+										li: a.comment-classic-reply(href='#' aria-label='reply')
+
+							.comment-classic-group
+								// Comment Classic
+								article.comment-classic
+									figure.comment-classic-figure: +jpg('comment-2-48x48', 'comment-classic-image')
+									.comment-classic-main
+										p.comment-classic-name Theresa Barnes 
+										.comment-classic-text
+											p Proin vitae nisl blandit, vehicula massa vita, convallis sem. Aliquam tempus varius rhoncus. Aliquam molestie neque non nunc commodo sollicitudin.
+										ul.comment-classic-meta
+											li: time(datetime='2018') May, 9 2018 at 9:47 am
+											li: a.comment-classic-reply(href='#' aria-label='reply')
+
+						.comment-classic-group
+							// Comment Classic
+							article.comment-classic
+								figure.comment-classic-figure: +jpg('comment-3-48x48', 'comment-classic-image')
+								.comment-classic-main
+									p.comment-classic-name Jason Hughes
+									.comment-classic-text
+										p Ut tincidunt sem quis eros sollicitudin, id pharetra ipsum ultricies. Curabitur vitae risus ac neque sodales mattis quis ac turpis.
+									ul.comment-classic-meta
+										li: time(datetime='2018') May, 8 2018 at 12:08 pm
+										li: a.comment-classic-reply(href='#' aria-label='reply')
+
+					.section-sm.section-bottom-0
+						h3 Send a Comment
+						// RD Mailform
+						form.rd-form.rd-mailform(data-form-output='form-output-global', data-form-type='contact', method='post', action='bat/rd-mailform.php')
+							.row.row-10
+								.col-md-6
+									.form-wrap
+										label.form-label-outside(for='comment-first-name') First Name
+										input#comment-first-name.form-input(type='text' name='name' data-constraints='@Required')
+
+								.col-md-6
+									.form-wrap
+										label.form-label-outside(for='comment-last-name') Last Name
+										input#comment-last-name.form-input(type='text' name='name' data-constraints='@Required')
+
+								.col-md-6
+									.form-wrap
+										label.form-label-outside(for='comment-email') E-mail
+										input#comment-email.form-input(type='email' name='email' data-constraints='@Email @Required')
+
+								.col-md-6
+									.form-wrap
+										label.form-label-outside(for='comment-phone') Phone
+										input#comment-phone.form-input(type='text' name='phone' data-constraints='@PhoneNumber')
+
+								.col-12
+									.form-wrap
+										label.form-label-outside(for='comment-message') Your Message
+										textarea#comment-message.form-input(name='message' data-constraints='@Required')
+
+
+							button.button.button-primary.button-winona(type='submit') Submit
+
+				.col-lg-4
+					// Profile Thin
+					article.profile-thin
+						.profile-thin-aside
+							+jpg('profile-thin-1-168x168', 'profile-thin-image')
+							a.profile-thin-contact-button(href='mailto:#')
+								span.icon.mdi.mdi-email-outline
+								span.icon.mdi.mdi-email-outline
+						.profile-thin-main
+							p.profile-thin-title Theresa Barnes
+							p.profile-thin-subtitle Founder, blogger
+							p Mauris eget velit sed orci faucibus aliquam fermentum a mauris. Integer nec augue nec dolor molestie semper. Class aptent taciti sociosqu.
+							include ../includes/_group-social-buttons
+							a.button.button-sm.button-primary-outline.button-winona(href='#') View full profile
+
+	// Page Footer
+	include ../sections/_footer-standard
+	+footer-standard({
+		about: 'Water is one of the leading spring water providers in the USA. We bottle and deliver bacteria-free spring water throughout the country covering all water needs and tastes. We are proud to be the nation’s #1 water provider!'
+	})
