@@ -1,6 +1,6 @@
 <?php
 // Inicia o cURL acessando uma URL
-$cURL = curl_init('localhost/eko/painel/public/api/home-banner');
+$cURL = curl_init('http://guilhermesutto.com.br/eko/painel/public/api/home-banner');
 // Define a opção que diz que você quer receber o resultado encontrado
 curl_setopt($cURL, CURLOPT_RETURNTRANSFER, true);
 // Executa a consulta, conectando-se ao site e salvando o resultado na variável $resultado
