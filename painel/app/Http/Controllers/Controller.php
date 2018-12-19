@@ -27,7 +27,9 @@ class Controller extends BaseController
     public function __construct() {        
         $segments = explode('/', $_SERVER['REQUEST_URI']);
         
-        $uri = parse_url($segments[4])['path'];
+        //$uri = parse_url($segments[4])['path'];
+        $uri = array_reverse($segments)[0];
+        if(is_numeric($uri)) $uri = array_reverse($segments)[1];
         //if($uri == "form") $uri = parse_url($segments[count($segments) -2])['path'];       
         
         /**
