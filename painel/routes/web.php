@@ -29,6 +29,10 @@ Route::post('home-deletar-imagem', function(){
     return response()->json(["sucesso" => "true"]);
 });
 
+Route::get('/', function(){
+    echo 123;
+});
+
 Route::post('/login', "Controller@login");
 Route::get('/login', "Controller@login");
 
