@@ -1,0 +1,63 @@
+{
+	"index":
+	{
+		"scripts":
+		[
+			"/assets/scripts/modules/paginas.js"
+		],
+
+		"styles":
+		[
+
+		],
+
+		"fields":
+		[
+
+		],
+
+		"modals":
+		[
+
+		],
+
+		"list_fields":
+		{
+			"id":"#",
+			"titulo":"Título",			
+			"statu":"Status"
+		}
+	},
+
+	"form":
+	{
+		"scripts":
+		[
+			"/eko/painel/public/js/paginas.js"
+		],
+
+		"styles":
+		[
+
+		],
+
+		"fields":
+		[
+			{
+				"label":false,
+				"name":"conteudo",
+				"translate":"Conteúdo",
+				"type":"textarea",				
+                "id":"conteudo",
+                "rows": 10,
+				"class":"",
+				"validate":""
+			}
+		],
+
+		"modals":
+		[
+
+		]
+	}
+}

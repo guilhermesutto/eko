@@ -9,7 +9,8 @@
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="<?php echo url('/'); ?>/template/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="<?php echo url('/'); ?>/template/bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <!--link rel="stylesheet" href="<?php echo url('/'); ?>/template/bower_components/font-awesome/css/font-awesome.min.css"-->
   <!-- Ionicons -->
   <link rel="stylesheet" href="<?php echo url('/'); ?>/template/bower_components/Ionicons/css/ionicons.min.css">
   <!-- Theme style -->

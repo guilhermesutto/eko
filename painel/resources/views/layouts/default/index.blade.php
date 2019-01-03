@@ -64,7 +64,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <strong class="card-title">Data Table</strong>
-                            </div><?php print_r($ConfigFile); exit; ?>
+                            </div>
                             <div class="card-body">
 							<table id="example2" class="table table-bordered table-hover">
                                     <thead>

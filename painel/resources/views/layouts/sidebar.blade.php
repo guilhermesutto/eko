@@ -16,51 +16,10 @@
       </a>
 
       <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-          <li class="dropdown user user-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Alexander Pierce</span>
-            </a>
-            <ul class="dropdown-menu">
-              <!-- User image -->
-              <li class="user-header">
-                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-
-                <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
-                </p>
-              </li>
-              <!-- Menu Body -->
-              <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
-                </div>
-                <!-- /.row -->
-              </li>
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
-                </div>
-                <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
-                </div>
-              </li>
-            </ul>
-          </li>
+        <ul class="nav navbar-nav">          
           <!-- Control Sidebar Toggle Button -->
           <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+            <a href="logout" ><i class="fas fa-sign-out-alt"></i></a>
           </li>
         </ul>
       </div>
@@ -78,30 +37,28 @@
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>            
           </a>          
         </li>
-        @foreach(App\Areas::where(array('ativo' => 1, 'id_pai' => NULL))->orWhere(array('ativo' => 1, 'id_pai' => 0))->orderBy('order_by', 'asc')->get() AS $Area)
+        @foreach(App\Areas::where(array('ativo' => 1, 'id_pai' => 0))->orderBy('order_by', 'asc')->get() AS $Area)
             <?php $Area->Subareas = App\Areas::where(array('ativo' => 1, 'id_pai' => $Area->id))->orderBy('order_by', 'asc')->get(); ?>
-            <?php $class=""; if(count($Area->Subareas) > 0) {
-                $class = "treeview";
-            } ?>
-            <li class="{{$class}}">
-                <a href="{{ url($Area->url) }}">
-                    <i class="fa fa-files-o"></i>
-                    <span>{{ $Area->titulo }}</span> 
-                    @if(count($Area->Subareas) > 0)
-                        {{count($Area->Subareas)}}
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    @endif               
-                </a>
-                @if(count($Area->Subareas) > 0)                    
-                    <ul class="treeview-menu">
-                        @foreach($Area->Subareas AS $SubArea)
-                            <li><a href="{{ url($SubArea->url) }}"><i class="fa fa-circle-o"></i> {{ $SubArea->titulo }}</a></li>                            
-                        @endforeach    
-                    </ul>
-                @endif
+            <?php $class= ""; if(count($Area->Subareas) > 0) $class="treeview"; ?>
+            <li class={{$class}}>
+              <a href="{{ url($Area->url) }}">
+                  <i class="fa fa-files-o"></i>
+                  <span>{{ $Area->titulo }}</span> 
+                  @if(count($Area->Subareas) > 0)                        
+                      <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                      </span>
+                  @endif               
+              </a>
+              @if(count($Area->Subareas) > 0)                    
+                  <ul class="treeview-menu">
+                      @foreach($Area->Subareas AS $SubArea)
+                          <li><a href="{{ url($SubArea->url) }}"><i class="fa fa-circle-o"></i> {{ $SubArea->titulo }}</a></li>                            
+                      @endforeach    
+                  </ul>
+              @endif
             </li>
+            
         @endforeach            
       </ul>
     </section>

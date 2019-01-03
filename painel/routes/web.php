@@ -30,7 +30,12 @@ Route::post('home-deletar-imagem', function(){
 });
 
 Route::get('/', function(){
-    echo 123;
+    return redirect('login');
+});
+
+Route::get('/logout', function(){
+    unset( $_SESSION["User"] );
+    return redirect('login');
 });
 
 Route::post('/login', "Controller@login");
@@ -48,6 +53,8 @@ foreach(App\Areas::where('ativo',1)->get() AS $Area){
         Route::post($Area->url, $Area->controller.'Controller@getIndex');
         Route::post($Area->url.'/form', $Area->controller.'Controller@getForm');
         Route::post($Area->url.'/form/{id}', $Area->controller.'Controller@getForm');
+
+        Route::get($Area->url.'/delete/{id}', $Area->controller.'Controller@getDelete');
 
         Route::get($Area->url, $Area->controller.'Controller@getIndex');
         Route::get($Area->url.'/form', $Area->controller.'Controller@getForm');
