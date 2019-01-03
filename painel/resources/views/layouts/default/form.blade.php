@@ -40,7 +40,7 @@ $pk = $Model->pk;
 									<div class="form-group" style="padding: 25px;"> 
 									<?php 
 										$ModelId = isset($Model)?$Model->$pk:null;
-										$col_sm  = isset($field['col-sm'])?$field['col-sm']:12;
+										$col_sm  = isset($field['col-sm'])?$field['col-sm']:0;
 									?>
 									{{ FormHelper::getInput($field, $ModelId, $col_sm) }}
 									</div>

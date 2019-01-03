@@ -198,6 +198,10 @@ class Controller extends BaseController
             }
         }
 
+        if(isset($data['continue_wsave'])){
+            return $Model;
+        }
+
         unset($data['_token']);
 
         if (isset($data['id']) && $data['id']) {

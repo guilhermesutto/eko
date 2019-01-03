@@ -6,13 +6,13 @@
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>Eko</b></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Eko</b>Alliance</span>
+      <span class="logo-lg"><b>Eko</b>Volunteers</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
       <!-- Sidebar toggle button-->
       <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only">Toggle navigation</span>
+          <i class="fas fa-angle-double-left"></i>
       </a>
 
       <div class="navbar-custom-menu">
@@ -34,7 +34,7 @@
         <li class="header"></li>
         <li class="">
           <a href="<?php echo url('/home'); ?>">
-            <i class="fa fa-dashboard"></i> <span>Dashboard</span>            
+            <i class="fas fa-chart-line"></i> <span>Dashboard</span>            
           </a>          
         </li>
         @foreach(App\Areas::where(array('ativo' => 1, 'id_pai' => 0))->orderBy('order_by', 'asc')->get() AS $Area)
@@ -42,7 +42,7 @@
             <?php $class= ""; if(count($Area->Subareas) > 0) $class="treeview"; ?>
             <li class={{$class}}>
               <a href="{{ url($Area->url) }}">
-                  <i class="fa fa-files-o"></i>
+                  <i class="{{$Area->icon}}"></i>
                   <span>{{ $Area->titulo }}</span> 
                   @if(count($Area->Subareas) > 0)                        
                       <span class="pull-right-container">
@@ -52,8 +52,8 @@
               </a>
               @if(count($Area->Subareas) > 0)                    
                   <ul class="treeview-menu">
-                      @foreach($Area->Subareas AS $SubArea)
-                          <li><a href="{{ url($SubArea->url) }}"><i class="fa fa-circle-o"></i> {{ $SubArea->titulo }}</a></li>                            
+                      @foreach($Area->Subareas AS $SubArea)                          
+                          <li><a href="{{ url($SubArea->url) }}"><i class="{{$SubArea->icon}}"></i> {{ $SubArea->titulo }}</a></li>                            
                       @endforeach    
                   </ul>
               @endif

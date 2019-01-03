@@ -36,7 +36,7 @@
 
 		"modals":
 		[
-			"login_esqueci_senha"
+			
 		]
 	},
 
@@ -77,30 +77,20 @@
 
 		"modals":
 		[
-			"filtro_usuarios"
+			
 		],
 
 		"list_fields":
 		{
-			"id":"#",
-			"id_grupo":"Grupo",
+			"id":"#",			
 			"nome":"Nome",
 			"email":"E-mail",
-			"username":"Username",
-			"superadmin":"Super Admin",
-			"ativo":"Status"
+			"username":"Username"		
 		},
 
 		"extra_buttons":
 		[
-			{
-				"titulo":"Filtrar",
-				"url":"",
-				"id":"",
-				"class":"btn-primary",
-				"icon":"icon-equalizer",
-				"data":{ "toggle":"modal", "target":"#ModalSearch" }
-			}
+			
 		]
 	},
 
@@ -117,17 +107,7 @@
 		],
 
 		"fields":
-		[
-			{
-				"label":true,
-				"name":"id_grupo",
-				"translate":"usuarios.grupo",
-				"type":"select",
-				"relation":["GruposUsuarios","grupo"],
-				"id":"id_grupo",
-				"class":"",
-				"validate":""
-			},
+		[			
 			{
 				"label":true,
 				"name":"nome",
@@ -236,63 +216,7 @@
 				"class":"",
 				"validate":"",
 				"help":"Somente preencha caso queria alterar o campo."
-			},
-			{
-				"label":true,
-				"name":"permissoes",
-				"translate":"",
-				"type":"template",
-				"template":"usuarios_permissoes",
-				"id":"permissoes",
-				"class":"",
-				"validate":""
-			},
-			{
-				"label":true,
-				"name":"permissoes_tasks",
-				"translate":"",
-				"type":"template",
-				"template":"usuarios_permissoes_tasks",
-				"id":"permissoes_tasks",
-				"class":"",
-				"validate":""
-			},
-			{
-				"label":true,
-				"name":"superadmin",
-				"translate":"usuarios.super_admin",
-				"type":"boolean",
-				"id":"superadmin",
-				"class":"",
-				"validate":""
-			},
-			{
-				"label":true,
-				"name":"is_televendas",
-				"translate":"usuarios.is_televendas",
-				"type":"boolean",
-				"id":"is_televendas",
-				"class":"",
-				"validate":""
-			},
-			{
-				"label":true,
-				"name":"is_backoffice",
-				"translate":"usuarios.is_backoffice",
-				"type":"boolean",
-				"id":"is_backoffice",
-				"class":"",
-				"validate":""
-			},
-			{
-				"label":true,
-				"name":"ativo",
-				"translate":"marcas.status",
-				"type":"boolean",
-				"id":"ativo",
-				"class":"",
-				"validate":""
-			}
+			}			
 
 		],
 

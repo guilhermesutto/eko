@@ -19,57 +19,10 @@ class Usuarios extends MyModel
 			$data['password'] = \Hash::make($data['password']);
 		} else {
             unset($data['password']);
-        }
-
-		if(isset($data['superadmin']) && $data['superadmin'] == 'on'){
-			$data['superadmin'] = 1;
-		} else {
-			$data['superadmin'] = 0;
-		}
-
-        if(isset($data['is_televendas']) && $data['is_televendas'] == 'on'){
-            $data['is_televendas'] = 1;
-        } else {
-            $data['is_televendas'] = 0;
-        }
-
-        if(isset($data['is_backoffice']) && $data['is_backoffice'] == 'on'){
-            $data['is_backoffice'] = 1;
-        } else {
-            $data['is_backoffice'] = 0;
-        }
-
-        if( isset($data['AreasPermissoes']) && $data['AreasPermissoes'] )
-        {
-            $data['areas_permissoes'] = implode(',', $data['AreasPermissoes']);
-            unset($data['AreasPermissoes']);
-        }
-
-        if( isset($data['TasksPermissoes']) && $data['TasksPermissoes'] ){
-
-            $data['tasks_permissoes'] = implode(',', $data['TasksPermissoes']);
-            unset($data['TasksPermissoes']);
-
-        }
+        }		
 
 		return $data;
-	}
-
-    public function tasks()
-    {
-        return $this->hasMany('App\Tasks', 'id_redator');
-    }
-
-    public function grupo()
-    {
-        return $this->belongsTo('App\GruposUsuarios','id_grupo');
-    }
-
-    public function get_id_grupo($obj)
-    {
-        @$nome = $obj->grupo->nome;
-    	return '<span class="label label-warning">'.$nome.'</span>';
-    }
+	}    
 
     public function get_superadmin($obj)
     {
@@ -80,8 +33,5 @@ class Usuarios extends MyModel
         }
     }
 
-    public function aph_canvas()
-    {
-        return $this->hasMany('App\AphroditeCanvas', 'editado_por');
-    }
+    
 }

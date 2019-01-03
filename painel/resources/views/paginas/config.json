@@ -24,8 +24,7 @@
 		"list_fields":
 		{
 			"id":"#",
-			"titulo":"Título",			
-			"statu":"Status"
+			"titulo":"Título"			
 		}
 	},
 
@@ -44,12 +43,33 @@
 		"fields":
 		[
 			{
-				"label":false,
+				"label":true,
+				"name":"titulo",
+				"translate":"Título",
+				"type":"text",				
+                "id":"titulo",                
+				"class":"",
+				"validate":""
+			},
+
+			{
+				"label":true,
 				"name":"conteudo",
 				"translate":"Conteúdo",
 				"type":"textarea",				
                 "id":"conteudo",
                 "rows": 10,
+				"class":"",
+				"validate":""
+			},
+
+			{
+				"label":true,
+				"name":"imagem",
+				"translate":"Imagem",
+				"type":"template",
+				"template": "default_imagem",
+				"id":"imagem",
 				"class":"",
 				"validate":""
 			}

@@ -27,7 +27,7 @@
 			  	<!--<input id="filtros" type="text" value="{{ implode(',',$filtros) }}" />-->
 			  	@endif
 	    	</div>
-	    	<div class="col-sm-6" style="text-align:right;">
+	    	<div class="col-sm-6" style="text-align:right; padding: 30px;">
 	    		@if($Controller->novo_registro)
 		    		<a href="{{ url($Area->url.'/form/') }}" class="btn btn-primary btn-sm btn-icon mr5">
 	                  <i class="icon-plus"></i>
@@ -73,7 +73,7 @@
 												<th><b>{{ $field }}</b></th>
 											@endforeach
 											@if($Controller->index_acoes)
-												<th><b>Ações</b></th>
+												<th><b>AÃ§Ãµes</b></th>
 											@endif                                            
                                         </tr>
                                     </thead>
