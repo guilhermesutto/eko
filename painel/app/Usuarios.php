@@ -16,7 +16,8 @@ class Usuarios extends MyModel
     public function bind($data)
 	{
 		if(isset($data['password']) && $data['password']){
-			$data['password'] = \Hash::make($data['password']);
+            //$data['password'] = \Hash::make($data['password']);
+            $data['password'] = $data['password'];
 		} else {
             unset($data['password']);
         }		
