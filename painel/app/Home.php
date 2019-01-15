@@ -16,9 +16,10 @@ class Home extends MyModel
 	{
         $Model = Home::find(1);
         $json = array();
-        if($Model){
-            $json = json_decode($Model->counteudo, true);
+        if($Model){            
+            $json = json_decode($Model->conteudo, true);
         }
+        
         if(!empty($data['Imagens'][0]['imagem'][0])){
             foreach($data['Imagens'][0]['imagem'] as $key=>$value){
                 $extensao = explode('.', $value->getClientOriginalName())[1];
@@ -27,7 +28,8 @@ class Home extends MyModel
                  \File::put($imgPath, file_get_contents($value->getPathName()));                
                 
                 $json['imgBanner'][] = "uploads/home/".$nomeImagem;
-            }
+            }           
+
             $dataModel = json_encode($json);
             $Model->conteudo = $dataModel;
             $Model->save();            
