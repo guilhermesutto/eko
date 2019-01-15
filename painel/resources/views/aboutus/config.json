@@ -1,0 +1,144 @@
+{
+	"index":
+	{
+		"scripts":
+		[
+			"/assets/scripts/modules/paginas.js"
+		],
+
+		"styles":
+		[
+
+		],
+
+		"fields":
+		[
+
+		],
+
+		"modals":
+		[
+
+		],
+
+		"list_fields":
+		{
+			"id":"#",
+			"titulo":"Título"			
+		}
+	},
+
+	"form":
+	{
+		"scripts":
+		[
+			"/eko/painel/public/js/paginas.js"
+		],
+
+		"styles":
+		[
+
+		],
+
+		"fields":
+		[
+			{
+				"label":true,
+				"name":"titulo",
+				"translate":"Título",
+				"type":"text",				
+                "id":"titulo",                
+				"class":"",
+				"validate":""
+			},			
+
+			{
+				"label":true,
+				"name":"imgTitulo",
+				"translate":"Imagem Título",
+				"type":"template",
+				"template": "default_imagem",
+				"id":"imgTitulo",
+				"class":"",
+				"validate":""
+            },
+            
+            {
+				"label":true,
+				"name":"texto",
+				"translate":"Texto",
+				"type":"text",				
+                "id":"texto",                
+				"class":"",
+				"validate":""
+            },
+            {
+				"label":true,
+				"name":"visao",
+				"translate":"Visão",
+				"type":"text",				
+                "id":"visao",                
+				"class":"",
+				"validate":""
+			},			
+
+			{
+				"label":true,
+				"name":"imgVisao",
+				"translate":"Imagem Visão",
+				"type":"template",
+				"template": "default_imagem",
+				"id":"imgVisao",
+				"class":"",
+				"validate":""
+            },
+
+            {
+				"label":true,
+				"name":"missao",
+				"translate":"Missão",
+				"type":"text",				
+                "id":"missao",                
+				"class":"",
+				"validate":""
+			},			
+
+			{
+				"label":true,
+				"name":"imgMissao",
+				"translate":"Imagem Missão",
+				"type":"template",
+				"template": "default_imagem",
+				"id":"imgMissao",
+				"class":"",
+				"validate":""
+            },
+
+            {
+				"label":true,
+				"name":"valor",
+				"translate":"Valor",
+				"type":"text",				
+                "id":"valor",                
+				"class":"",
+				"validate":""
+			},			
+
+			{
+				"label":true,
+				"name":"imgValor",
+				"translate":"Imagem Valor",
+				"type":"template",
+				"template": "default_imagem",
+				"id":"imgValor",
+				"class":"",
+				"validate":""
+            }
+		],
+
+		"modals":
+		[
+
+		]
+	}
+}
