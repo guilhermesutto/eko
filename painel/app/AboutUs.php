@@ -12,24 +12,31 @@ class AboutUs extends MyModel
 
     public function bind($data)
 	{
-        /*$Model = Home::find(1);
-        $json = array();
-        if($Model){
-            $json = json_decode($Model->counteudo, true);
+        
+        if(!empty($data['imgTitulo'])){            
+            $extensao = array_reverse(explode('.', $data['imgTitulo']->getClientOriginalName()))[0];            
+            $nomeImagem = md5(date('Y-m-d H:i:s:')."-".$data['imgTitulo']->getClientOriginalName()).".".$extensao;                      
+            $imgPath = base_path()."/public/uploads/about-us/".$nomeImagem;             
+            \File::put($imgPath, file_get_contents($data['imgTitulo']->getPathName())); 
+            $data['imgTitulo'] = $nomeImagem;                      
         }
-        if(!empty($data['Imagens'][0]['imagem'][0])){
-            foreach($data['Imagens'][0]['imagem'] as $key=>$value){
-                $extensao = explode('.', $value->getClientOriginalName())[1];
-                $nomeImagem = md5(date('Y-m-d H:i:s:')."-".$value->getClientOriginalName()).".".$extensao;                      
-                $imgPath = base_path()."/public/uploads/home/".$nomeImagem;             
-                 \File::put($imgPath, file_get_contents($value->getPathName()));                
-                
-                $json['imgBanner'][] = "uploads/home/".$nomeImagem;
-            }
-            $dataModel = json_encode($json);
-            $Model->conteudo = $dataModel;
-            $Model->save();            
-        }*/
+
+        if(!empty($data['imgValor'])){            
+            $extensao = array_reverse(explode('.', $data['imgValor']->getClientOriginalName()))[0];            
+            $nomeImagem = md5(date('Y-m-d H:i:s:')."-".$data['imgValor']->getClientOriginalName()).".".$extensao;                      
+            $imgPath = base_path()."/public/uploads/about-us/".$nomeImagem;             
+            \File::put($imgPath, file_get_contents($data['imgValor']->getPathName())); 
+            $data['imgValor'] = $nomeImagem;                      
+        }
+
+        if(!empty($data['imgMissao'])){            
+            $extensao = array_reverse(explode('.', $data['imgMissao']->getClientOriginalName()))[0];            
+            $nomeImagem = md5(date('Y-m-d H:i:s:')."-".$data['imgMissao']->getClientOriginalName()).".".$extensao;                      
+            $imgPath = base_path()."/public/uploads/about-us/".$nomeImagem;             
+            \File::put($imgPath, file_get_contents($data['imgMissao']->getPathName())); 
+            $data['imgMissao'] = $nomeImagem;                      
+        }
+
 		return $data;
     }    
 }

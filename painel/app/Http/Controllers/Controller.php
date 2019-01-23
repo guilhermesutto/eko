@@ -86,7 +86,7 @@ class Controller extends BaseController
         
         if ($this->view)
             $view = $this->view;
-          
+            
         return view($view)
                         ->with('Area', $this->Area)
                         ->with('Model', $this->Model)
@@ -225,7 +225,7 @@ class Controller extends BaseController
 
         foreach ($data AS $key => $val) {
             if (!is_array($val)) {
-                $Model->$key = utf8_decode($val);
+                $Model->$key = $val;
             }
         }
 
@@ -324,6 +324,7 @@ class Controller extends BaseController
      * @return array
      */
     public static function getConfigFile($return_json = false) {
+       
         $json = '';
         $MethodName = explode('@', \Route::currentRouteAction());
         $ViewFolderName = explode("\\", $MethodName[0]);

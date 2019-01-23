@@ -29,7 +29,7 @@
           <div class="row" style="margin-top: 25px">
             <?php if(isset($arrayModel[$nomeCampo])){ ?>
                 <div style="position: relative; width: 25%; float: left; margin-right: 20px;" >
-                  <img class="imgProd" src="<?php echo URL::to('/'); ?>/<?php echo $arrayModel[$nomeCampo] ?>" style="width:100%; max-height: 150px;"/>                  
+                  <img class="imgProd" src="<?php echo URL::to('/'); ?>/uploads/about-us/<?php echo $arrayModel[$nomeCampo] ?>" style="width:100%; max-height: 150px;"/>                  
                 </div>
             <?php } ?>
           </div>          

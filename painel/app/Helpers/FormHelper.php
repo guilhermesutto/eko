@@ -110,6 +110,7 @@ class FormHelper
 				break;
 
 			case 'textarea':
+				if(!isset($rows)) $rows = 10;
 				$input.='<textarea name="'.$name.'" rows="'.$rows.'" placeholder="'.trans($translate).'" id="'.$id.'" class="form-control '.$class.'" '.$disabled.'>'.$value.'</textarea>';
 				$input .= "<script>
 								setTimeout(function(){

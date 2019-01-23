@@ -32,4 +32,5 @@ class HomeController extends Controller
     public function frontGetBanner(){
         return response()->json(Home::find(1));
     }
+    
 }

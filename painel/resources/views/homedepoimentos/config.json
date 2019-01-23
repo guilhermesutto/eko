@@ -1,0 +1,93 @@
+{
+	"index":
+	{
+		"scripts":
+		[
+			"/assets/scripts/modules/paginas.js"
+		],
+
+		"styles":
+		[
+
+		],
+
+		"fields":
+		[
+
+		],
+
+		"modals":
+		[
+
+		],
+
+		"list_fields":
+		{
+			"id":"#",
+			"nome":"Nome",
+			"descricao":"Descrição Pessoa"			
+		}
+	},
+
+	"form":
+	{
+		"scripts":
+		[
+			"/eko/painel/public/js/paginas.js"
+		],
+
+		"styles":
+		[
+
+		],
+
+		"fields":
+		[
+			{
+				"label":true,
+				"name":"nome",
+				"translate":"Nome",
+				"type":"text",				
+                "id":"nome",                
+				"class":"",
+				"validate":""
+			},	
+			
+			{
+				"label":true,
+				"name":"descricao",
+				"translate":"Descrição Pessoa",
+				"type":"text",
+                "id":"descricao",                
+				"class":"",
+				"validate":""
+			},				
+            
+            {
+				"label":true,
+				"name":"depoimento",
+				"translate":"Depoimento",
+				"type":"textarea",				
+                "id":"depoimento",                
+				"class":"",
+				"validate":""
+			},
+			
+			{
+				"label":true,
+				"name":"ativo",
+				"translate":"Ativo",
+				"type":"boolean",
+				"id":"ativo",
+				"class":"",
+				"validate":""
+			}
+            
+		],
+
+		"modals":
+		[
+
+		]
+	}
+}

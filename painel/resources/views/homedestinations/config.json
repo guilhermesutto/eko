@@ -1,0 +1,105 @@
+{
+	"index":
+	{
+		"scripts":
+		[
+			"/assets/scripts/modules/paginas.js"
+		],
+
+		"styles":
+		[
+
+		],
+
+		"fields":
+		[
+
+		],
+
+		"modals":
+		[
+
+		],
+
+		"list_fields":
+		{
+			"id":"#",
+			"titulo":"Título",
+			"descricao":"Descrição",
+			"valor": "Valor"		
+		}
+	},
+
+	"form":
+	{
+		"scripts":
+		[
+			"/eko/painel/public/js/paginas.js"
+		],
+
+		"styles":
+		[
+
+		],
+
+		"fields":
+		[
+			{
+				"label":true,
+				"name":"titulo",
+				"translate":"Título",
+				"type":"text",				
+                "id":"titulo",                
+				"class":"",
+				"validate":""
+			},	
+			
+			{
+				"label":true,
+				"name":"descricao",
+				"translate":"Descrição",
+				"type":"textarea",
+                "id":"descricao",                
+				"class":"",
+				"validate":""
+			},				
+            
+            {
+				"label":true,
+				"name":"Valor",
+				"translate":"Valor",
+				"type":"text",				
+                "id":"Valor",                
+				"class":"",
+				"validate":""
+			},
+
+			{
+				"label":true,
+				"name":"img",
+				"translate":"Imagem",
+				"type":"template",
+				"template": "default_imagem",
+				"id":"img",
+				"class":"",
+				"validate":""
+            },
+			
+			{
+				"label":true,
+				"name":"ativo",
+				"translate":"Ativo",
+				"type":"boolean",
+				"id":"ativo",
+				"class":"",
+				"validate":""
+			}			
+            
+		],
+
+		"modals":
+		[
+
+		]
+	}
+}

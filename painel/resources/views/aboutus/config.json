@@ -67,7 +67,7 @@
 				"label":true,
 				"name":"texto",
 				"translate":"Texto",
-				"type":"text",				
+				"type":"textarea",				
                 "id":"texto",                
 				"class":"",
 				"validate":""
@@ -76,7 +76,7 @@
 				"label":true,
 				"name":"visao",
 				"translate":"Visão",
-				"type":"text",				
+				"type":"textarea",				
                 "id":"visao",                
 				"class":"",
 				"validate":""
@@ -97,7 +97,7 @@
 				"label":true,
 				"name":"missao",
 				"translate":"Missão",
-				"type":"text",				
+				"type":"textarea",				
                 "id":"missao",                
 				"class":"",
 				"validate":""
@@ -118,7 +118,7 @@
 				"label":true,
 				"name":"valor",
 				"translate":"Valor",
-				"type":"text",				
+				"type":"textarea",				
                 "id":"valor",                
 				"class":"",
 				"validate":""
