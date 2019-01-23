@@ -1,0 +1,93 @@
+{
+	"index":
+	{
+		"scripts":
+		[
+			"/assets/scripts/modules/paginas.js"
+		],
+
+		"styles":
+		[
+
+		],
+
+		"fields":
+		[
+
+		],
+
+		"modals":
+		[
+
+		],
+
+		"list_fields":
+		{
+			"id":"#",
+			"titulo":"Título",
+			"descricao":"Descrição"	
+		}
+	},
+
+	"form":
+	{
+		"scripts":
+		[
+			"/eko/painel/public/js/paginas.js"
+		],
+
+		"styles":
+		[
+
+		],
+
+		"fields":
+		[
+			{
+				"label":true,
+				"name":"texto",
+				"translate":"Texto",
+				"type":"textarea",				
+                "id":"texto",                
+				"class":"",
+				"validate":""
+			},	
+			
+			{
+				"label":true,
+				"name":"endereco",
+				"translate":"Endereço",
+				"type":"text",
+                "id":"endereco",                
+				"class":"",
+				"validate":""
+			},				
+            
+            {
+				"label":true,
+				"name":"telefone",
+				"translate":"Telefone",
+				"type":"text",				
+                "id":"telefone",                
+				"class":"",
+				"validate":""
+			},
+			
+			{
+				"label":true,
+				"name":"email",
+				"translate":"Email",
+				"type":"text",
+				"id":"email",
+				"class":"",
+				"validate":""
+			}			
+            
+		],
+
+		"modals":
+		[
+
+		]
+	}
+}

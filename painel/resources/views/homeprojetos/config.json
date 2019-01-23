@@ -1,0 +1,93 @@
+{
+	"index":
+	{
+		"scripts":
+		[
+			"/assets/scripts/modules/paginas.js"
+		],
+
+		"styles":
+		[
+
+		],
+
+		"fields":
+		[
+
+		],
+
+		"modals":
+		[
+
+		],
+
+		"list_fields":
+		{
+			"id":"#",
+			"titulo":"Título",
+			"descricao":"Descrição"	
+		}
+	},
+
+	"form":
+	{
+		"scripts":
+		[
+			"/eko/painel/public/js/paginas.js"
+		],
+
+		"styles":
+		[
+
+		],
+
+		"fields":
+		[
+			{
+				"label":true,
+				"name":"titulo",
+				"translate":"Título",
+				"type":"text",				
+                "id":"titulo",                
+				"class":"",
+				"validate":""
+			},	
+			
+			{
+				"label":true,
+				"name":"descricao",
+				"translate":"Descrição",
+				"type":"textarea",
+                "id":"descricao",                
+				"class":"",
+				"validate":""
+			},				
+            
+            {
+				"label":true,
+				"name":"icone",
+				"translate":"Ícone",
+				"type":"text",				
+                "id":"icone",                
+				"class":"",
+				"validate":""
+			},
+			
+			{
+				"label":true,
+				"name":"ativo",
+				"translate":"Ativo",
+				"type":"boolean",
+				"id":"ativo",
+				"class":"",
+				"validate":""
+			}			
+            
+		],
+
+		"modals":
+		[
+
+		]
+	}
+}
