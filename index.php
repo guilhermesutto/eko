@@ -1,16 +1,40 @@
 <?php
 // Inicia o cURL acessando uma URL
 $cURL = curl_init('http://ekovolunteers.com/painel/public/api/home-banner');
-// Define a opção que diz que você quer receber o resultado encontrado
+// Define a opï¿½ï¿½o que diz que vocï¿½ quer receber o resultado encontrado
 curl_setopt($cURL, CURLOPT_RETURNTRANSFER, true);
-// Executa a consulta, conectando-se ao site e salvando o resultado na variável $resultado
+// Executa a consulta, conectando-se ao site e salvando o resultado na variï¿½vel $resultado
 $resultado = curl_exec($cURL);
-// Encerra a conexão com o site
+// Encerra a conexï¿½o com o site
 curl_close($cURL);
 
 $Banner = json_decode($resultado, true);
 $Banner = json_decode($Banner['conteudo'], true);
 $Banner = $Banner['imgBanner'];
+
+// Inicia o cURL acessando uma URL
+//$cURL = curl_init('http://ekovolunteers.com/painel/public/api/home-projects');
+$cURL = curl_init('http://localhost/eko/painel/public/api/home-projects');
+// Define a opï¿½ï¿½o que diz que vocï¿½ quer receber o resultado encontrado
+curl_setopt($cURL, CURLOPT_RETURNTRANSFER, true);
+// Executa a consulta, conectando-se ao site e salvando o resultado na variï¿½vel $resultado
+$resultado = curl_exec($cURL);
+// Encerra a conexï¿½o com o site
+curl_close($cURL);
+
+$Projetos = json_decode($resultado, true);
+
+// Inicia o cURL acessando uma URL
+//$cURL = curl_init('http://ekovolunteers.com/painel/public/api/home-testimonals');
+$cURL = curl_init('http://localhost/eko/painel/public/api/home-testimonals');
+// Define a opï¿½ï¿½o que diz que vocï¿½ quer receber o resultado encontrado
+curl_setopt($cURL, CURLOPT_RETURNTRANSFER, true);
+// Executa a consulta, conectando-se ao site e salvando o resultado na variï¿½vel $resultado
+$resultado = curl_exec($cURL);
+// Encerra a conexï¿½o com o site
+curl_close($cURL);
+
+$Depoimentos = json_decode($resultado, true);
 
 
 //INCLUDE DO HEAD
@@ -36,7 +60,7 @@ include("include/head.php");
           <div class="swiper-button-next"></div>
         </div>
       </section>
-      <!-- A Few Words About Us-->
+      <!-- A Few Words About Us
       <section class="section section-md">
         <div class="section-wave section-wave-white">
           <svg x="0px" y="0px" viewBox="0 0 1920 45" width="1920" height="45px" preserveAspectRatio="none">
@@ -58,12 +82,12 @@ include("include/head.php");
           </div>
         </div>
       </section>
-      <!-- Small Features-->
+      <!-- Small Features
       <section class="section section-lg bg-gray-100">
         <div class="container">
           <div class="row row-30">
             <div class="col-sm-6 col-lg-4 wow-outer">
-              <!-- Box Minimal-->
+              <!-- Box Minimal
               <article class="box-minimal">
                 <div class="box-minimal-icon mdi mdi-shield wow fadeIn"></div>
                 <div class="box-minimal-main wow-outer">
@@ -73,7 +97,7 @@ include("include/head.php");
               </article>
             </div>
             <div class="col-sm-6 col-lg-4 wow-outer">
-              <!-- Box Minimal-->
+              <!-- Box Minimal
               <article class="box-minimal">
                 <div class="box-minimal-icon mdi mdi-leaf wow fadeIn" data-wow-delay=".1s"></div>
                 <div class="box-minimal-main wow-outer">
@@ -83,7 +107,7 @@ include("include/head.php");
               </article>
             </div>
             <div class="col-sm-6 col-lg-4 wow-outer">
-              <!-- Box Minimal-->
+              <!-- Box Minimal
               <article class="box-minimal">
                 <div class="box-minimal-icon mdi mdi-water wow fadeIn" data-wow-delay=".2s"></div>
                 <div class="box-minimal-main wow-outer">
@@ -119,7 +143,7 @@ include("include/head.php");
       <!-- Section Products-->
       <section class="section section-lg section-wave-offset">
         <div class="container">
-          <h3 class="text-center">Our Products</h3>
+          <h3 class="text-center">Our Destinations</h3>
           <div class="row row-30 row-md-50">
             <div class="col-md-6">
                     <article class="card-modern wow fadeInUp" data-wow-delay=".05s">
@@ -189,33 +213,23 @@ include("include/head.php");
       <section class="section section-lg bg-gray-100 text-center">
         <div class="container">
           <div class="box-4">
-            <h3 class="wow-outer"><span class="wow slideInUp">We Work to Offer the Best Customer Service</span></h3>
+            <h3 class="wow-outer"><span class="wow slideInUp">Our Projects</span></h3>
           </div>
           <div class="row row-30">
-            <div class="col-sm-6 col-lg-4 wow-outer">
-              <!-- Box Creative-->
-              <article class="box-creative wow slideInLeft">
-                <div class="box-creative-icon mdi mdi-cellphone-android"></div>
-                <h4 class="box-creative-title"><a href="#">Online Ordering</a></h4>
-                <p>Our online store is always open to customers who prefer to drink quality spring water. You can also order Water products via our partnersâ€™ websites.</p>
-              </article>
-            </div>
-            <div class="col-sm-6 col-lg-4 wow-outer">
-              <!-- Box Creative-->
-              <article class="box-creative wow slideInLeft" data-wow-delay=".1s">
-                <div class="box-creative-icon fl-bigmug-line-graphical8"></div>
-                <h4 class="box-creative-title"><a href="#">Free Delivery</a></h4>
-                <p>If your order more than 6 bottles of our water we will deliver it to your home or office for free. This offer applies only to online orders placed till 8 PM.</p>
-              </article>
-            </div>
-            <div class="col-sm-6 col-lg-4 wow-outer">
-              <!-- Box Creative-->
-              <article class="box-creative wow slideInLeft" data-wow-delay=".2s">
-                <div class="box-creative-icon mdi mdi mdi-heart-outline"></div>
-                <h4 class="box-creative-title"><a href="#">Friendly Managers</a></h4>
-                <p>Our team of friendly managers is always ready to help you choose and order the best sparkling or spring water. Feel free to contact us for more information.</p>
-              </article>
-            </div>
+            <?php 
+                foreach($Projetos as $key=>$value){
+                  echo '
+                    <div class="col-sm-6 col-lg-4 wow-outer">
+                      <!-- Box Creative-->
+                      <article class="box-creative wow slideInLeft">
+                        <div class="box-creative-icon"></div>
+                        <h4 class="box-creative-title"><a href="#">'.$value["titulo"].'</a></h4>
+                        <p>'.$value["descricao"].'</p>
+                      </article>
+                    </div>
+                  ';
+                }
+            ?>            
           </div>
         </div>
       </section>
@@ -224,88 +238,40 @@ include("include/head.php");
         <div class="container">
           <h3>Testimonials</h3>
           <div class="owl-carousel" data-items="1" data-md-items="2" data-dots="true" data-nav="false" data-loop="true" data-margin="30" data-stage-padding="0" data-mouse-drag="false">
-            <div class="wow-outer">
-              <blockquote class="quote-modern quote-modern-big wow slideInLeft">
-                <svg class="quote-modern-mark" x="0px" y="0px" width="35px" height="25px" viewbox="0 0 35 25">
-                  <path d="M27.461,10.206h7.5v15h-15v-15L25,0.127h7.5L27.461,10.206z M7.539,10.206h7.5v15h-15v-15L4.961,0.127h7.5                L7.539,10.206z"></path>
-                </svg>
-                <div class="quote-modern-text">
-                  <p>I am so grateful for this water delivery to our home! Weâ€™ve got our energy back after just a short time and we feel vibrant again! I especially like sparkling water.</p>
-                </div>
-                <div class="quote-modern-meta">
-                  <div class="quote-modern-avatar"><img src="images/testimonials-person-1-96x96.jpg" alt="" width="96" height="96"/>
-                  </div>
-                  <div class="quote-modern-info">
-                    <cite class="quote-modern-cite">Kelly McMillan</cite>
-                    <p class="quote-modern-caption">Regular Client</p>
-                  </div>
-                </div>
-              </blockquote>
-            </div>
-            <div class="wow-outer">
-              <blockquote class="quote-modern quote-modern-big wow slideInLeft">
-                <svg class="quote-modern-mark" x="0px" y="0px" width="35px" height="25px" viewbox="0 0 35 25">
-                  <path d="M27.461,10.206h7.5v15h-15v-15L25,0.127h7.5L27.461,10.206z M7.539,10.206h7.5v15h-15v-15L4.961,0.127h7.5                L7.539,10.206z"></path>
-                </svg>
-                <div class="quote-modern-text">
-                  <p>I have looked far and wide in Los Angeles County for the purest water, and Water is without a doubt the cleanest, freshest, most vital water available and it is also affordable.</p>
-                </div>
-                <div class="quote-modern-meta">
-                  <div class="quote-modern-avatar"><img src="images/testimonials-person-2-96x96.jpg" alt="" width="96" height="96"/>
-                  </div>
-                  <div class="quote-modern-info">
-                    <cite class="quote-modern-cite">Harold Barnett</cite>
-                    <p class="quote-modern-caption">Regular Client</p>
-                  </div>
-                </div>
-              </blockquote>
-            </div>
-            <div class="wow-outer">
-              <blockquote class="quote-modern quote-modern-big wow slideInLeft">
-                <svg class="quote-modern-mark" x="0px" y="0px" width="35px" height="25px" viewbox="0 0 35 25">
-                  <path d="M27.461,10.206h7.5v15h-15v-15L25,0.127h7.5L27.461,10.206z M7.539,10.206h7.5v15h-15v-15L4.961,0.127h7.5                L7.539,10.206z"></path>
-                </svg>
-                <div class="quote-modern-text">
-                  <p>I have been drinking your spring water since November and I love it! The water is so delicious and the Water team is so wonderful and helpful.</p>
-                </div>
-                <div class="quote-modern-meta">
-                  <div class="quote-modern-avatar"><img src="images/testimonials-person-3-96x96.jpg" alt="" width="96" height="96"/>
-                  </div>
-                  <div class="quote-modern-info">
-                    <cite class="quote-modern-cite">Albert Webb</cite>
-                    <p class="quote-modern-caption">Regular Client</p>
-                  </div>
-                </div>
-              </blockquote>
-            </div>
-            <div class="wow-outer">
-              <blockquote class="quote-modern quote-modern-big wow slideInLeft">
-                <svg class="quote-modern-mark" x="0px" y="0px" width="35px" height="25px" viewbox="0 0 35 25">
-                  <path d="M27.461,10.206h7.5v15h-15v-15L25,0.127h7.5L27.461,10.206z M7.539,10.206h7.5v15h-15v-15L4.961,0.127h7.5                L7.539,10.206z"></path>
-                </svg>
-                <div class="quote-modern-text">
-                  <p>Could not be happier with this service, the water, and the people involved. I have been using them for almost a year. The water tastes incredible and I like it!</p>
-                </div>
-                <div class="quote-modern-meta">
-                  <div class="quote-modern-avatar"><img src="images/testimonials-person-4-96x96.jpg" alt="" width="96" height="96"/>
-                  </div>
-                  <div class="quote-modern-info">
-                    <cite class="quote-modern-cite">Samantha Lee</cite>
-                    <p class="quote-modern-caption">Regular Client</p>
-                  </div>
-                </div>
-              </blockquote>
-            </div>
+            <?php
+                foreach($Depoimentos as $key=>$value){
+                  echo '
+                          <div class="wow-outer">
+                          <blockquote class="quote-modern quote-modern-big wow slideInLeft">
+                            <svg class="quote-modern-mark" x="0px" y="0px" width="35px" height="25px" viewbox="0 0 35 25">
+                              <path d="M27.461,10.206h7.5v15h-15v-15L25,0.127h7.5L27.461,10.206z M7.539,10.206h7.5v15h-15v-15L4.961,0.127h7.5                L7.539,10.206z"></path>
+                            </svg>
+                            <div class="quote-modern-text">
+                              <p>'.$value["depoimento"].'</p>
+                            </div>
+                            <div class="quote-modern-meta">
+                              <div class="quote-modern-avatar"><img src="images/testimonials-person-1-96x96.jpg" alt="" width="96" height="96"/>
+                              </div>
+                              <div class="quote-modern-info">
+                                <cite class="quote-modern-cite">'.$value["nome"].'</cite>
+                                <p class="quote-modern-caption">'.$value["descricao"].'</p>
+                              </div>
+                            </div>
+                          </blockquote>
+                        </div>
+                        ';
+                }
+            ?>            
           </div>
         </div>
       </section>
-      <!-- Latest Blog Posts-->
+      <!-- Latest Blog Posts
       <section class="section section-lg bg-gray-100 section-wave-offset">
         <div class="container">
           <h3 class="wow-outer text-center"><span class="wow slideInDown">Latest Blog Posts</span></h3>
           <div class="row row-50 justify-content-center justify-content-lg-start">
             <div class="col-md-10 col-lg-7 wow-outer">
-              <!-- Post Block-->
+              <!-- Post Block
               <article class="post-block bg-gray-700"><img class="post-block-image" src="images/blog-layouts-5-637x456.jpg" alt="" width="637" height="456"/>
                 <div class="post-block-caption">
                   <ul class="post-block-meta">
@@ -322,7 +288,7 @@ include("include/head.php");
             </div>
             <div class="col-md-10 col-lg-5">
               <div class="post-light-group wow-outer">
-                <!-- Post Light-->
+                <!-- Post Light
                 <article class="post-light wow slideInLeft">
                   <time class="post-light-time" datetime="2018"><span class="post-light-time-big">29</span><span class="post-light-time-small">April</span></time>
                   <div class="post-light-main">
@@ -333,7 +299,7 @@ include("include/head.php");
                     </ul>
                   </div>
                 </article>
-                <!-- Post Light-->
+                <!-- Post Light
                 <article class="post-light wow slideInLeft">
                   <time class="post-light-time" datetime="2018"><span class="post-light-time-big">30</span><span class="post-light-time-small">April</span></time>
                   <div class="post-light-main">
@@ -344,7 +310,7 @@ include("include/head.php");
                     </ul>
                   </div>
                 </article>
-                <!-- Post Light-->
+                <!-- Post Light
                 <article class="post-light wow slideInLeft">
                   <time class="post-light-time" datetime="2018"><span class="post-light-time-big">2</span><span class="post-light-time-small">May</span></time>
                   <div class="post-light-main">

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Home;
+use App\HomeProjetos;
+use App\HomeDepoimentos;
 
 
 class HomeController extends Controller
@@ -31,6 +33,14 @@ class HomeController extends Controller
 
     public function frontGetBanner(){
         return response()->json(Home::find(1));
+    }
+
+    public function frontGetProjects(){
+        return response()->json(HomeProjetos::where('ativo',1)->get());
+    }
+
+    public function frontGetTestimonals(){
+        return response()->json(HomeDepoimentos::where('ativo',1)->limit(10)->get());
     }
     
 }

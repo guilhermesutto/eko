@@ -18,3 +18,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get("home-banner", "HomeController@frontGetBanner");
+Route::get("home-projects", "HomeController@frontGetProjects");
+Route::get("home-testimonals", "HomeController@frontGetTestimonals");
