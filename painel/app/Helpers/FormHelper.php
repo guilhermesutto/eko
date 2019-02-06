@@ -135,8 +135,9 @@ class FormHelper
 				break;
 
 			case 'select':
-
-				$input.='<select name="'.$name.'" id="'.$id.'" data-placeholder="'.trans($translate).'" data-value="'.$value.'" class="select2" style="width: 100%;" '.$disabled.'>';
+				$multiple = "";
+				if(isset($multiplo)) $multiple = "multiple";
+				$input.='<select '.$multiple.' name="'.$name.'" id="'.$id.'" data-placeholder="'.trans($translate).'" data-value="'.$value.'" class="select2" style="width: 100%;" '.$disabled.'>';
 
 					$input.="<option value='0'>".((isset($placeholder) && ( !isset($label) || !$label))?$placeholder:'Selecione:')."</option>";
 
@@ -200,6 +201,7 @@ class FormHelper
 
 					if( isset($Model) ){
 						$dataTemplate['Model'] = $Model;
+						$dataTemplate['path'] = isset($path) ? $path : "";
 						$dataTemplate['nomeCampo'] = isset($alias) ? $alias : $name;
 						$dataTemplate['arrayModel'] = (array) $Model->getAttributes();
 					}

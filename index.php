@@ -1,44 +1,17 @@
 <?php
-// Inicia o cURL acessando uma URL
-$cURL = curl_init('http://ekovolunteers.com/painel/public/api/home-banner');
-// Define a op��o que diz que voc� quer receber o resultado encontrado
-curl_setopt($cURL, CURLOPT_RETURNTRANSFER, true);
-// Executa a consulta, conectando-se ao site e salvando o resultado na vari�vel $resultado
-$resultado = curl_exec($cURL);
-// Encerra a conex�o com o site
-curl_close($cURL);
-
-$Banner = json_decode($resultado, true);
-$Banner = json_decode($Banner['conteudo'], true);
-$Banner = $Banner['imgBanner'];
-
-// Inicia o cURL acessando uma URL
-//$cURL = curl_init('http://ekovolunteers.com/painel/public/api/home-projects');
-$cURL = curl_init('http://localhost/eko/painel/public/api/home-projects');
-// Define a op��o que diz que voc� quer receber o resultado encontrado
-curl_setopt($cURL, CURLOPT_RETURNTRANSFER, true);
-// Executa a consulta, conectando-se ao site e salvando o resultado na vari�vel $resultado
-$resultado = curl_exec($cURL);
-// Encerra a conex�o com o site
-curl_close($cURL);
-
-$Projetos = json_decode($resultado, true);
-
-// Inicia o cURL acessando uma URL
-//$cURL = curl_init('http://ekovolunteers.com/painel/public/api/home-testimonals');
-$cURL = curl_init('http://localhost/eko/painel/public/api/home-testimonals');
-// Define a op��o que diz que voc� quer receber o resultado encontrado
-curl_setopt($cURL, CURLOPT_RETURNTRANSFER, true);
-// Executa a consulta, conectando-se ao site e salvando o resultado na vari�vel $resultado
-$resultado = curl_exec($cURL);
-// Encerra a conex�o com o site
-curl_close($cURL);
-
-$Depoimentos = json_decode($resultado, true);
-
-
 //INCLUDE DO HEAD
 include("include/head.php");
+include("include/db.php");
+
+//Querys
+$Banner = dbQuerySingle("home", "id = 1");
+$Banner = json_decode($Banner->conteudo, true);
+$Banner = $Banner['imgBanner'];
+//print_r( $Banner ); exit;
+$Projetos = (array) dbQuery("home_projetos", "ativo = 1");
+
+$Depoimentos = (array) dbQuery("home_depoimentos", "ativo = 1", "", 10);
+
 ?>
 
       <!-- Slider-->

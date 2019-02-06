@@ -3,17 +3,17 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\HomeProjetos;
+use App\Paises;
 
-class HomeProjetos extends MyModel
+class Paises extends MyModel
 {
-    protected $table = 'home_projetos';
-    public    $seed  = 'titulo';
+    protected $table = 'paises';
+    public    $seed  = 'SL_NOME';
     public    $deletar = true;
     public    $timestamps = false;
 
     public function bind($data)
-	{          
+	{
 		return $data;
     }
 }

@@ -1,0 +1,121 @@
+{
+	"index":
+	{
+		"scripts":
+		[
+			"/assets/scripts/modules/paginas.js"
+		],
+
+		"styles":
+		[
+
+		],
+
+		"fields":
+		[
+
+		],
+
+		"modals":
+		[
+
+		],
+
+		"list_fields":
+		{
+			"id":"#",
+			"nome":"Nome",
+			"descricao":"Descrição Pessoa"			
+		}
+	},
+
+	"form":
+	{
+		"scripts":
+		[
+			"/eko/painel/public/js/paginas.js"
+		],
+
+		"styles":
+		[
+
+		],
+
+		"fields":
+		[
+			{
+				"label":true,
+				"name":"pais",
+				"translate":"País",
+                "type":"select",
+                "relation": ["Paises", "SL_ID"],				
+                "id":"pais",                
+				"class":"",
+				"validate":""
+			},	
+			
+			{
+				"label":true,
+				"name":"cidade",
+				"translate":"Cidade",
+				"type":"text",
+                "id":"cidade",                
+				"class":"",
+				"validate":""
+			},				
+            
+            {
+				"label":true,
+				"name":"bandeiraPais",
+				"translate":"Bandeira do País",
+                "type":"template",
+                "template": "default_imagem",			
+				"id":"bandeiraPais",
+				"path": "destinos"
+			},
+			
+			{
+				"label":true,
+				"name":"projetos[]",
+				"translate":"Projetos",
+                "type":"select",
+                "relation": ["HomeProjetos", "titulo"],
+                "id":"projetos",
+                "multiplo": 1				
+            },
+            
+            {
+                "label": true,
+                "name": "taxas",
+                "translate": "Taxas",
+                "type": "template",
+                "template": "taxas",
+                "id": "taxas"
+            },
+            
+            {
+                "label": true,
+                "name": "descricao",
+                "translate": "Descricao",
+                "type": "textarea",                
+                "id": "descricao"
+            },
+            
+            {
+                "label": true,
+                "name": "imagem",
+                "translate": "Imagem",
+                "type": "template",
+                "template": "default_imagem",                
+				"id": "imagem",
+				"path": "destinos"
+            }
+            
+		],
+
+		"modals":
+		[
+
+		]
+	}
+}
