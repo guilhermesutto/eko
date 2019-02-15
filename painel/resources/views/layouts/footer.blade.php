@@ -38,7 +38,8 @@
 <script src="<?php echo url('/'); ?>/template/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo url('/'); ?>/template/dist/js/demo.js"></script>
-<script src="https://cdn.ckeditor.com/4.7.1/standard/ckeditor.js"></script>
+
+<script src="<?php echo url('/'); ?>/js/ckeditor/ckeditor.js"></script>
 
 <!-- PAGE SCRIPTS -->
 @if(isset($ConfigFile['scripts']))
