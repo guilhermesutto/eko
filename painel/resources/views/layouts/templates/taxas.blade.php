@@ -1,5 +1,5 @@
 <?php
-    if(isset($Model->taxas)) $taxas = $Model->taxas;  
+    if(count($Model->taxas) > 0) $taxas = $Model->taxas;  
 ?>
 <style type="text/css">
   .divFees{

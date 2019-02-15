@@ -91,6 +91,14 @@
                 "type": "template",
                 "template": "taxas",
                 "id": "taxas"
+			},
+			
+			{
+                "label": true,
+                "name": "descricaoTaxa",
+                "translate": "Descricao da Taxa",
+                "type": "textarea",                
+                "id": "descricaoTaxa"
             },
             
             {
