@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width height=device-height initial-scale=1.0 maximum-scale=1.0 user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.png" type="image/png">
     <!-- Stylesheets-->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800%7COswald:300,400,500">
     <link rel="stylesheet" href="css/bootstrap.css">
@@ -38,10 +38,14 @@
                     <ul class="rd-navbar-nav">
                       <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Home</a>
                       </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="water.html">Water</a>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="destinations.php">Destinations</a>
                       </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="#">Pages</a>
-                        <!-- RD Navbar Megamenu-->
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="fees.php">Fees</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="about-us.php">About us</a>
+                      </li>
+                     <!-- <li class="rd-nav-item"><a class="rd-nav-link" href="#">Pages</a>
+                         RD Navbar Megamenu
                         <ul class="rd-menu rd-navbar-megamenu">
                           <li class="rd-megamenu-item">
                             <ul class="rd-megamenu-list">
@@ -74,14 +78,14 @@
                             </ul>
                           </li>
                         </ul>
-                      </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="blog.html">Blog</a>
-                        <!-- RD Navbar Dropdown-->
+                      </li>-->
+                     <!--  <li class="rd-nav-item"><a class="rd-nav-link" href="blog.html">Blog</a>
+                        RD Navbar Dropdown
                         <ul class="rd-menu rd-navbar-dropdown">
                           <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="single-blog-post.html">Single Blog Post</a></li>
                         </ul>
-                      </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contacts</a>
+                      </li>-->
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.php">Contacts</a>
                       </li>
                     </ul>
                   </div>

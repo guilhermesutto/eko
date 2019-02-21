@@ -8,7 +8,7 @@ $Banner = dbQuerySingle("home", "id = 1");
 $Banner = json_decode($Banner->conteudo, true);
 $Banner = $Banner['imgBanner'];
 //print_r( $Banner ); exit;
-$Projetos = (array) dbQuery("home_projetos", "ativo = 1");
+$Projetos =  dbQuery("home_projetos", "ativo = 1");
 
 $Depoimentos = (array) dbQuery("home_depoimentos", "ativo = 1", "", 10);
 
@@ -196,8 +196,8 @@ $Depoimentos = (array) dbQuery("home_depoimentos", "ativo = 1", "", 10);
                       <!-- Box Creative-->
                       <article class="box-creative wow slideInLeft">
                         <div class="box-creative-icon"></div>
-                        <h4 class="box-creative-title"><a href="#">'.$value["titulo"].'</a></h4>
-                        <p>'.$value["descricao"].'</p>
+                        <h4 class="box-creative-title"><a href="#">'.$value->titulo.'</a></h4>
+                        <p>'.$value->descricao.'</p>
                       </article>
                     </div>
                   ';
@@ -220,14 +220,14 @@ $Depoimentos = (array) dbQuery("home_depoimentos", "ativo = 1", "", 10);
                               <path d="M27.461,10.206h7.5v15h-15v-15L25,0.127h7.5L27.461,10.206z M7.539,10.206h7.5v15h-15v-15L4.961,0.127h7.5                L7.539,10.206z"></path>
                             </svg>
                             <div class="quote-modern-text">
-                              <p>'.$value["depoimento"].'</p>
+                              <p>'.$value->depoimento.'</p>
                             </div>
                             <div class="quote-modern-meta">
                               <div class="quote-modern-avatar"><img src="images/testimonials-person-1-96x96.jpg" alt="" width="96" height="96"/>
                               </div>
                               <div class="quote-modern-info">
-                                <cite class="quote-modern-cite">'.$value["nome"].'</cite>
-                                <p class="quote-modern-caption">'.$value["descricao"].'</p>
+                                <cite class="quote-modern-cite">'.$value->nome.'</cite>
+                                <p class="quote-modern-caption">'.$value->descricao.'</p>
                               </div>
                             </div>
                           </blockquote>

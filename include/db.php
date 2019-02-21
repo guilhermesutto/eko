@@ -12,10 +12,10 @@
     }
 
 
-    function dbQuery($tbl, $where, $order = "ASC", $limit = 100){
+    function dbQuery($tbl, $where = "", $order = "ASC", $limit = 100){
         global $conn;
 
-        $where = " AND ".$where;
+        if(!empty($where)) $where = " AND ".$where;
         $data = $conn->query("SELECT * FROM $tbl WHERE 1=1 ".$where." ORDER BY id ".$order." LIMIT ".$limit);
 
         $retorno = [];
@@ -23,9 +23,9 @@
         while($row = $data->fetch(PDO::FETCH_OBJ)) {
             $array = [];
             foreach($row as $key=>$value){
-                $array[$key] = $value;
+                $array[$key] = utf8_encode($value);
             }
-            $retorno[] = $array;
+            $retorno[] = (object) $array;
         }
         
         return (object) $retorno;
@@ -40,7 +40,7 @@
         $array = [];
         while($row = $data->fetch(PDO::FETCH_OBJ)) {            
             foreach($row as $key=>$value){
-                $array[$key] = $value;
+                $array[$key] = utf8_encode($value);
             }            
         }
         

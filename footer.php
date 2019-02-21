@@ -1,3 +1,6 @@
+<?php
+$Footer = dbQuerySingle("footer", "id = 1");
+?>
 <footer class="section footer-standard bg-gray-modern">
               <div class="section-wave">
                 <svg x="0px" y="0px" viewBox="0 0 1920 45" width="1920" height="45px" preserveAspectRatio="none">
@@ -11,16 +14,16 @@
                     <div class="col-lg-4">
                       <div class="inset-right-1">
                         <h4>About Us</h4>
-                        <p>Eko Alliance is a non-profit organization based in São Paulo, Brazil. Our goal is to provide na internacional volunteer program.</p>
+                        <p><?php echo $Footer->texto; ?></p>
                       </div>
                     </div>
                     <div class="col-sm-6 col-md-5 col-lg-4">
                       <div class="box-1">
                         <h4>Contact Information</h4>
                         <ul class="list-sm list-footer">
-                          <li class="object-inline"><span class="icon icon-sm mdi mdi-map-marker text-gray-700"></span><a class="link-default" href="#">2130 Fulton Street <br> San Diego, CA 94117-1080 USA</a></li>
-                          <li class="object-inline"><span class="icon icon-sm mdi mdi-phone text-gray-700"></span><a class="link-default" href="tel:#">1-800-1234-678</a></li>
-                          <li class="object-inline"><span class="icon icon-sm mdi mdi-email text-gray-700"></span><a class="link-default" href="mailto:#">info@demolink.org</a></li>
+                          <li class="object-inline"><span class="icon icon-sm mdi mdi-map-marker text-gray-700"></span><a class="link-default" href="#"><?php echo $Footer->endereco; ?></a></li>
+                          <li class="object-inline"><span class="icon icon-sm mdi mdi-phone text-gray-700"></span><a class="link-default" href="tel:#"><?php echo $Footer->telefone; ?></a></li>
+                          <li class="object-inline"><span class="icon icon-sm mdi mdi-email text-gray-700"></span><a class="link-default" href="mailto:#"><?php echo $Footer->email; ?></a></li>
                         </ul>
                       </div>
                     </div>
