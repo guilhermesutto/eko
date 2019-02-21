@@ -10,7 +10,20 @@ $Banner = $Banner['imgBanner'];
 //print_r( $Banner ); exit;
 $Projetos =  dbQuery("home_projetos", "ativo = 1");
 
-$Depoimentos = (array) dbQuery("home_depoimentos", "ativo = 1", "", 10);
+$Depoimentos = dbQuery("home_depoimentos", "ativo = 1", "", 10);
+
+$Destinos = dbQuery("destinos", "", "ASC", "10");
+
+function getProjetos($projetos){
+    $Ids = explode(",", $projetos);
+    $retorno = "";
+    foreach($Ids as $id){
+        $projeto = dbQuerySingle("home_projetos","id = $id");
+        $retorno .= $projeto->titulo." ";
+    }
+
+    return $retorno;
+}
 
 ?>
 
@@ -92,7 +105,7 @@ $Depoimentos = (array) dbQuery("home_depoimentos", "ativo = 1", "", 10);
           </div>
         </div>
       </section>
-      <!-- Woman CTA-->
+      <!-- Woman CTA
       <section class="section section-xl bg-gray-700 bg-image bg-image-1" style="background-image: url(images/call-to-action-1-1920x584.jpg);">
         <div class="container">
           <div class="row justify-content-sm-end">
@@ -118,62 +131,24 @@ $Depoimentos = (array) dbQuery("home_depoimentos", "ativo = 1", "", 10);
         <div class="container">
           <h3 class="text-center">Our Destinations</h3>
           <div class="row row-30 row-md-50">
-            <div class="col-md-6">
+          <?php foreach($Destinos as $destino){ ?>
+                <?php $projetos = getProjetos($destino->projetos); ?>
+                
+                <div class="col-md-6">
                     <article class="card-modern wow fadeInUp" data-wow-delay=".05s">
-                      <div class="card-modern-left"><img src="images/water-01-138x197.png" alt="" width="138" height="197"/>
-                      </div>
-                      <div class="card-modern-body">
-                        <h4><a class="card-modern-title" href="#">1 L Spring Water in Glass</a></h4>
-                        <div class="card-modern-price"><span>$10</span></div>
-                        <div class="card-modern-info"><span class="icon icon-sm mdi mdi-information-outline"></span><span class="card-modern-info-text">for daily use</span></div>
+                    <div class="card-modern-left"><img src="painel/public/uploads/destinos/<?php echo $destino->bandeiraPais; ?>" alt="" width="138" height="197"/>
+                    </div>
+                    <div class="card-modern-body">
+                        <h4><a class="card-modern-title" href="#"><?php echo $destino->cidade; ?></a></h4>                        
+                        <div class="card-modern-info"><span class="icon icon-sm mdi mdi-information-outline"></span><span class="card-modern-info-text"><?php echo $projetos; ?></span></div>
                         <div class="card-modern-text">
-                          <p>Enjoy your favorite spring water in the most popular shape! This water is great to share and drink at any weather and is a reasonable offer for any budget.</p>
+                        <p><?php echo substr(strip_tags($destino->descricao), 0, 50); ?></p>
+                        <p><a href="destination.php?id=<?php echo $destino->id; ?>"><b>See more</b></a></p>
                         </div>
-                      </div>
+                    </div>
                     </article>
-            </div>
-            <div class="col-md-6">
-                    <article class="card-modern wow fadeInUp second" data-wow-delay=".05s">
-                      <div class="card-modern-left"><img src="images/water-02-138x197.png" alt="" width="138" height="197"/>
-                      </div>
-                      <div class="card-modern-body">
-                        <h4><a class="card-modern-title" href="#">750 ml Sparkling Water</a></h4>
-                        <div class="card-modern-price"><span>$9</span></div>
-                        <div class="card-modern-info"><span class="icon icon-sm mdi mdi-information-outline"></span><span class="card-modern-info-text">for daily use</span></div>
-                        <div class="card-modern-text">
-                          <p>Perfect sparkling water for single- or multi-serve convenience for home, restaurant or upscale retail stores. We are sure you will love its energizing effect.</p>
-                        </div>
-                      </div>
-                    </article>
-            </div>
-            <div class="col-md-6">
-                    <article class="card-modern wow fadeInUp third" data-wow-delay=".05s">
-                      <div class="card-modern-left"><img src="images/water-03-138x197.png" alt="" width="138" height="197"/>
-                      </div>
-                      <div class="card-modern-body">
-                        <h4><a class="card-modern-title" href="#">500 ml Spring Water</a></h4>
-                        <div class="card-modern-price"><span>$7</span></div>
-                        <div class="card-modern-info"><span class="icon icon-sm mdi mdi-information-outline"></span><span class="card-modern-info-text">for daily use</span></div>
-                        <div class="card-modern-text">
-                          <p>Need a greater amount of our spring water at an affordable price? Then Water’s 500 ml spring water is your #1 fit. Available at all major department stores and online.</p>
-                        </div>
-                      </div>
-                    </article>
-            </div>
-            <div class="col-md-6">
-                    <article class="card-modern wow fadeInUp fourth" data-wow-delay=".05s">
-                      <div class="card-modern-left"><img src="images/water-04-138x197.png" alt="" width="138" height="197"/>
-                      </div>
-                      <div class="card-modern-body">
-                        <h4><a class="card-modern-title" href="#">333 ml Spring Water</a></h4>
-                        <div class="card-modern-price"><span>$10</span></div>
-                        <div class="card-modern-info"><span class="icon icon-sm mdi mdi-information-outline"></span><span class="card-modern-info-text">for daily use</span></div>
-                        <div class="card-modern-text">
-                          <p>Wherever it is served, our Spring Water is the finest pairing for any dish. Our spring’s unique blend of minerals provides a remarkably refreshing taste.</p>
-                        </div>
-                      </div>
-                    </article>
-            </div>
+                </div>
+            <?php } ?>   
           </div>
           <div class="row justify-content-center text-center row-offset-custom-1">
             <div class="col-12">

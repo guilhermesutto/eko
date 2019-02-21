@@ -36,11 +36,13 @@
                   <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
-                      <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Home</a>
+                      <li class="rd-nav-item active"><a class="rd-nav-link" href="index.php">Home</a>
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="destinations.php">Destinations</a>
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="fees.php">Fees</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="testimonals.php">Testimonials</a>
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="about-us.php">About us</a>
                       </li>

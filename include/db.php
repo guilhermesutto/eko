@@ -15,7 +15,8 @@
     function dbQuery($tbl, $where = "", $order = "ASC", $limit = 100){
         global $conn;
 
-        if(!empty($where)) $where = " AND ".$where;
+        if(!empty($where)) $where = " AND ".$where;        
+
         $data = $conn->query("SELECT * FROM $tbl WHERE 1=1 ".$where." ORDER BY id ".$order." LIMIT ".$limit);
 
         $retorno = [];
