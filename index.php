@@ -8,11 +8,11 @@ $Banner = dbQuerySingle("home", "id = 1");
 $Banner = json_decode($Banner->conteudo, true);
 $Banner = $Banner['imgBanner'];
 //print_r( $Banner ); exit;
-$Projetos =  dbQuery("home_projetos", "ativo = 1");
+$Projetos =  dbQuery("home_projetos", "ativo = 1", "", 3);
 
 $Depoimentos = dbQuery("home_depoimentos", "ativo = 1", "", 10);
 
-$Destinos = dbQuery("destinos", "", "ASC", "10");
+$Destinos = dbQuery("destinos", "", "ASC", "4");
 
 function getProjetos($projetos){
     $Ids = explode(",", $projetos);
@@ -152,7 +152,7 @@ function getProjetos($projetos){
           </div>
           <div class="row justify-content-center text-center row-offset-custom-1">
             <div class="col-12">
-              <div class="wow-outer button-outer"><a class="button button-lg button-primary button-winona wow slideInDown" data-wow-delay=".1s" href="about-us.html">View more</a></div>
+              <div class="wow-outer button-outer"><a class="button button-lg button-primary button-winona wow slideInDown" data-wow-delay=".1s" href="destinations.php">View more</a></div>
             </div>
           </div>
         </div>
@@ -170,9 +170,9 @@ function getProjetos($projetos){
                     <div class="col-sm-6 col-lg-4 wow-outer">
                       <!-- Box Creative-->
                       <article class="box-creative wow slideInLeft">
-                        <div class="box-creative-icon"></div>
+                        <div class="box-creative-icon">'.$value->icone.'</div>
                         <h4 class="box-creative-title"><a href="#">'.$value->titulo.'</a></h4>
-                        <p>'.$value->descricao.'</p>
+                        <p>'.substr($value->descricao, 0, 194).' ...</p>
                       </article>
                     </div>
                   ';
@@ -285,27 +285,7 @@ function getProjetos($projetos){
         </div>
       </div>
     </div>
-    <div class="modal modal-custom fade" id="call-form">
-      <div class="modal-dialog modal-dialog-custom" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h3>Request a Callback</h3>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"></span></button>
-          </div>
-          <div class="modal-body">
-            <p>Please leave your phone number in the field below and we will call you back soon.</p>
-            <form class="rd-form rd-mailform form-inline form-inline-custom" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
-              <div class="form-wrap">
-                <input class="form-input" id="header-phone" type="text" name="phone" data-constraints="@Numeric">
-                <label class="form-label" for="header-phone">Phone</label>
-              </div>
-              <div class="form-button">
-                <button class="button button-primary button-icon button-icon-only button-winona" type="submit" aria-label="submit"><span class="icon mdi mdi-phone-in-talk"></span></button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
+    
     </div>
     <!-- Global Mailform Output-->
     <div class="snackbars" id="form-output-global"></div>

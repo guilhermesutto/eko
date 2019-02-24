@@ -30,7 +30,7 @@
                 <div class="rd-navbar-panel">
                   <!-- RD Navbar Toggle-->
                   <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span></button>
-                  <!-- RD Navbar Brand--><a class="rd-navbar-brand" href="index.html"><img src="images/matriz_rgb.jpg" alt="Eko Volunteers" srcset="images/matriz_rgb.jpg 2x" style="width: 80px !important;" /></a>
+                  <!-- RD Navbar Brand--><a class="rd-navbar-brand" href="index.php"><img src="images/matriz_rgb.jpg" alt="Eko Volunteers" srcset="images/matriz_rgb.jpg 2x" style="width: 80px !important;" /></a>
                 </div>
                 <div class="rd-navbar-main-element">
                   <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
@@ -91,10 +91,7 @@
                       </li>
                     </ul>
                   </div>
-                  <!-- Callback link-->
-                  <div class="rd-navbar-call">
-                    <button class="icon icon-md mdi mdi-phone" data-toggle="modal" data-target="#call-form"></button>
-                  </div>
+                  
                 </div>
               </div>
             </div>

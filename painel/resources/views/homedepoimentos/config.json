@@ -72,6 +72,18 @@
 				"class":"",
 				"validate":""
 			},
+
+			{
+				"label":true,
+				"name":"imagem",
+				"translate":"Imagem",
+				"type":"template",
+				"template": "default_imagem",
+				"id":"imagem",
+				"path": "depoimentos",
+				"class":"",
+				"validate":""
+            },
 			
 			{
 				"label":true,
