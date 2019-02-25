@@ -165,7 +165,7 @@ function getProjetos($projetos){
           </div>
           <div class="row row-30">
             <?php 
-                foreach($Projetos as $key=>$value){ print_r($value); exit;
+                foreach($Projetos as $key=>$value){
                   echo '
                     <div class="col-sm-6 col-lg-4 wow-outer">
                       <!-- Box Creative-->
