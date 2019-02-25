@@ -19,7 +19,7 @@ $(document).ready(function(){
         var idImagem = $(this).attr('id');
         $.ajax({
             headers:{'X-CSRF-TOKEN':token},
-            url:'/eko/painel/public/home-deletar-imagem',
+            url:'/painel/public/home-deletar-imagem',
             data:{"id":idImagem},
             method:'POST',
           }).done(function(ret) {});
