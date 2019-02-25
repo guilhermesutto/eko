@@ -24,7 +24,7 @@ $pagina = dbQuerySingle("paginas", "id = 1");
       </section>
         <section class="section section-lg section-wave-offset">
             <div class="container">
-                <div class="row row-30 row-md-50">
+                <div class="row ">
                     <?php echo $pagina->conteudo; ?>
                 </div>    
             </div>
@@ -67,5 +67,13 @@ $pagina = dbQuerySingle("paginas", "id = 1");
     <!-- Javascript-->
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('p').each(function(){
+          $(this).css("width", "100%");
+        });
+      });
+      
+    </script>
   </body>
 </html>

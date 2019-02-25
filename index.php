@@ -171,8 +171,8 @@ function getProjetos($projetos){
                       <!-- Box Creative-->
                       <article class="box-creative wow slideInLeft">
                         <div class="box-creative-icon">'.$value->icone.'</div>
-                        <h4 class="box-creative-title"><a href="#">'.$value->titulo.'</a></h4>
-                        <p>'.substr($value->descricao, 0, 194).' ...</p>
+                        <h4 class="box-creative-title"><a href="#">'.strip_tags($value->titulo).'</a></h4>
+                        <p>'.strip_tags(substr($value->descricao, 0, 194)).' ...</p>
                       </article>
                     </div>
                   ';
