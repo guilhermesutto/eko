@@ -14,6 +14,15 @@ class HomeDepoimentos extends MyModel
 
     public function bind($data)
 	{        
+        if(empty($data['id'])){
+            $data['depoimento'] = \TermosHelper::saveTermo($data['depoimento']);            
+            $data['descricao'] = \TermosHelper::saveTermo($data['descricao']);            
+        }else{
+            $DadosAntigos = Footer::find($data['id']);
+            \TermosHelper::updateTermo($DadosAntigos->depoimento, $data['depoimento']);            
+            \TermosHelper::updateTermo($DadosAntigos->descricao, $data['descricao']);            
+        }
+        
         if(!empty($data['imagem'])){            
             $extensao = array_reverse(explode('.', $data['imagem']->getClientOriginalName()))[0];            
             $nomeImagem = md5(date('Y-m-d H:i:s:')."-".$data['imagem']->getClientOriginalName()).".".$extensao;                      
@@ -22,5 +31,13 @@ class HomeDepoimentos extends MyModel
             $data['imagem'] = $nomeImagem;                      
         }  
 		return $data;
+    }
+
+    public function get_depoimento($obj){        
+        return \TermosHelper::getOrInsertTermo($obj['depoimento'], $obj['id'], 'HomeDepoimentos', 'depoimento');
+    }
+    
+    public function get_descricao($obj){
+        return \TermosHelper::getOrInsertTermo($obj['descricao'], $obj['id'], 'HomeDepoimentos', 'descricao');
     }
 }

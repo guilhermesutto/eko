@@ -13,7 +13,16 @@ class Paginas extends MyModel
     public    $timestamps = false;
 
     public function bind($data)
-	{        
+	{
+
+        if(empty($data['id'])){
+            $data['titulo'] = \TermosHelper::saveTermo($data['titulo']);
+            $data['conteudo'] = \TermosHelper::saveTermo($data['conteudo']);
+        }else{
+            $DadosAntigos = Paginas::find($data['id']);
+            $data['conteudo'] = \TermosHelper::updateTermo($DadosAntigos->conteudo, $data['conteudo']);
+            $data['titulo'] = \TermosHelper::updateTermo($DadosAntigos->titulo, $data['titulo']);
+        }
         
         if(!empty($data['imagem'])){            
             $extensao = array_reverse(explode('.', $data['imagem']->getClientOriginalName()))[0];
@@ -25,5 +34,13 @@ class Paginas extends MyModel
         }                
 		        
 		return $data;
-    }    
+    }
+    
+    public function get_titulo($obj){        
+        return \TermosHelper::getOrInsertTermo($obj['titulo'], $obj['id'], 'Paginas', 'titulo');
+    }
+    
+    public function get_conteudo($obj){
+        return \TermosHelper::getOrInsertTermo($obj['conteudo'], $obj['id'], 'Paginas', 'conteudo');
+    }
 }

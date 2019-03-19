@@ -24,8 +24,9 @@
 		"list_fields":
 		{
 			"id":"#",
-			"nome":"Nome",
-			"descricao":"Descrição Pessoa"			
+			"cidade":"Cidade",
+			"descricao":"Descrição",
+			"descricaoTaxa": "Desc"			
 		}
 	},
 
@@ -98,7 +99,8 @@
                 "name": "descricaoTaxa",
                 "translate": "Descricao da Taxa",
                 "type": "textarea",                
-                "id": "descricaoTaxa"
+				"id": "descricaoTaxa",
+				"multi": 1
             },
             
             {
@@ -106,7 +108,8 @@
                 "name": "descricao",
                 "translate": "Descricao",
                 "type": "textarea",                
-                "id": "descricao"
+				"id": "descricao",
+				"multi": 1
             },
             
             {

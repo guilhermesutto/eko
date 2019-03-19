@@ -14,6 +14,13 @@ class Footer extends MyModel
 
     public function bind($data)
 	{
+        if(empty($data['id'])){
+            $data['texto'] = \TermosHelper::saveTermo($data['texto']);            
+        }else{
+            $DadosAntigos = Footer::find($data['id']);
+            \TermosHelper::updateTermo($DadosAntigos->texto, $data['texto']);            
+        }
+
 		return $data;
     }
 }

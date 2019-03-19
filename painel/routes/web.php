@@ -38,6 +38,11 @@ Route::get('/logout', function(){
     return redirect('login');
 });
 
+Route::post('getTermoById', "TermosController@getTermoById");
+Route::post('getTermoByLang', "TermosController@getTermoByLang");
+Route::post('getTermo', "TermosController@getTermo");
+Route::post('saveTermoByLang', "TermosController@saveTermoByLang");
+
 Route::post('/login', "Controller@login");
 Route::get('/login', "Controller@login");
 

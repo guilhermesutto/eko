@@ -50,7 +50,7 @@
 				"type":"text",				
                 "id":"nome",                
 				"class":"",
-				"validate":""
+				"validate":""				
 			},	
 			
 			{
@@ -60,7 +60,8 @@
 				"type":"text",
                 "id":"descricao",                
 				"class":"",
-				"validate":""
+				"validate":"",
+				"multi": 1
 			},				
             
             {
@@ -70,7 +71,8 @@
 				"type":"textarea",				
                 "id":"depoimento",                
 				"class":"",
-				"validate":""
+				"validate":"",
+				"multi": 1
 			},
 
 			{

@@ -40,6 +40,7 @@
 <script src="<?php echo url('/'); ?>/template/dist/js/demo.js"></script>
 
 <script src="<?php echo url('/'); ?>/js/ckeditor/ckeditor.js"></script>
+<script src="<?php echo url('/'); ?>/js/jquery-loading-master/src/loading.js"></script>
 
 <!-- PAGE SCRIPTS -->
 @if(isset($ConfigFile['scripts']))

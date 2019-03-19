@@ -29,6 +29,8 @@
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="<?php echo url('/'); ?>/template/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
+  <link rel="stylesheet" href="<?php echo url('/'); ?>/js/jquery-loading-master/src/loading.css">
+
   <!-- HTML5 Shim and Respond.js IE 8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>

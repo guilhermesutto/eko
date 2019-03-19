@@ -51,7 +51,8 @@
 				"type":"text",				
                 "id":"titulo",                
 				"class":"",
-				"validate":""
+				"validate":"",
+				"multi": 1
 			},	
 			
 			{
@@ -61,7 +62,8 @@
 				"type":"textarea",
                 "id":"descricao",                
 				"class":"",
-				"validate":""
+				"validate":"",
+				"multi": 1
 			},				
             
             {

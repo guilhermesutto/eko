@@ -50,7 +50,8 @@
 				"type":"textarea",				
                 "id":"texto",                
 				"class":"",
-				"validate":""
+				"validate":"",
+				"multi": 1
 			},	
 			
 			{
