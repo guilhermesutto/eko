@@ -38,7 +38,7 @@ $pk = $Model->pk;
 							@endif
 							<?php $termos = []; $nomesTextArea = [];?>
 							@foreach($ConfigFile['fields'] AS $field)
-									@if($field['type'] == 'text' || $field['type'] == 'textarea')
+									@if(isset($field['multi']))
 										<?php 
 											$name = $field["name"];
 											$termos[$field["id"]] = $Model->$name; ?>
