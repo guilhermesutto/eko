@@ -6,7 +6,7 @@ $data = dbQuerySingle("about_us", "id = 1");
 
 ?>
       <!-- Breadcrumbs -->
-      <section class="breadcrumbs-custom bg-image context-dark" style="background-image: url(images/imgAboutUs.jpeg);">
+      <section class="breadcrumbs-custom bg-image context-dark" style="background-image: url(<?php echo $data->imgTitulo; ?>);">
         <div class="breadcrumbs-custom-inner">
           <div class="container breadcrumbs-custom-container">
             <div class="breadcrumbs-custom-main">
@@ -25,13 +25,13 @@ $data = dbQuerySingle("about_us", "id = 1");
       <section class="section section-lg-custom">
         <div class="container">
           <div class="row row-50 justify-content-center justify-content-lg-between">
-            <div class="col-md-10 col-lg-6 column-ethereal">
+            <div class="col-md-10 col-lg-12 column-ethereal">
                 <h3><?php echo $data->titulo; ?></h3>
               
                 <?php echo $data->texto; ?>
               
             </div>
-            <div class="col-md-10 col-lg-6 col-xl-5 align-self-end"><img class="img-responsive" src="images/about-01-510x482.png" alt="" width="510" height="482"/>
+           <!-- <div class="col-md-10 col-lg-6 col-xl-5 align-self-end"><img class="img-responsive" src="images/about-01-510x482.png" alt="" width="510" height="482"/> -->
             </div>
           </div>
         </div>
@@ -41,7 +41,7 @@ $data = dbQuerySingle("about_us", "id = 1");
           <!-- Timeline Classic-->
           <article class="timeline-classic">
             <div class="timeline-classic-item">
-              <div class="timeline-classic-item-aside"><img class="timeline-classic-item-image" src="images/timeline-1-390x250.jpg" alt="" width="390" height="250"/>
+              <div class="timeline-classic-item-aside"><img class="timeline-classic-item-image" src="<?php echo $data->imgVisao; ?>" alt="" width="390" height="250"/>
               </div>
               <div class="timeline-classic-item-divider"></div>
               <div class="timeline-classic-item-main">
@@ -50,7 +50,7 @@ $data = dbQuerySingle("about_us", "id = 1");
             </div>
             </div>
             <div class="timeline-classic-item">
-              <div class="timeline-classic-item-aside"><img class="timeline-classic-item-image" src="images/timeline-2-390x250.jpg" alt="" width="390" height="250"/>
+              <div class="timeline-classic-item-aside"><img class="timeline-classic-item-image" src="<?php echo $data->imgMissao; ?>" alt="" width="390" height="250"/>
               </div>
               <div class="timeline-classic-item-divider"></div>
               <div class="timeline-classic-item-main">
@@ -59,12 +59,12 @@ $data = dbQuerySingle("about_us", "id = 1");
               </div>
             </div>
             <div class="timeline-classic-item">
-              <div class="timeline-classic-item-aside"><img class="timeline-classic-item-image" src="images/timeline-3-390x250.jpg" alt="" width="390" height="250"/>
+              <div class="timeline-classic-item-aside"><img class="timeline-classic-item-image" src="<?php echo $data->imgValor; ?>" alt="" width="390" height="250"/>
               </div>
               <div class="timeline-classic-item-divider"></div>
               <div class="timeline-classic-item-main">
                 <p class="timeline-classic-item-title">Values</p>
-                <<?php echo $data->valores; ?>
+                <?php echo $data->valor; ?>
               </div>
             </div>            
           </article>

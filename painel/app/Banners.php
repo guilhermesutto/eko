@@ -14,12 +14,12 @@ class Banners extends MyModel
 
     public function bind($data)
 	{        
-        if(!empty($data['imagem'])){            
-            $extensao = array_reverse(explode('.', $data['imagem']->getClientOriginalName()))[0];            
-            $nomeImagem = md5(date('Y-m-d H:i:s:')."-".$data['imagem']->getClientOriginalName()).".".$extensao;                      
-            $imgPath = base_path()."/public/uploads/".$nomeImagem;             
-            \File::put($imgPath, file_get_contents($data['imagem']->getPathName())); 
-            $data['imagem'] = $nomeImagem;                      
+        if(!empty($data['banner'])){            
+            $extensao = array_reverse(explode('.', $data['banner']->getClientOriginalName()))[0];            
+            $nomebanner = md5(date('Y-m-d H:i:s:')."-".$data['banner']->getClientOriginalName()).".".$extensao;                      
+            $imgPath = base_path()."/public/uploads/about-us/".$nomebanner;             
+            \File::put($imgPath, file_get_contents($data['banner']->getPathName())); 
+            $data['banner'] = $nomebanner;                      
         }
         
 		return $data;

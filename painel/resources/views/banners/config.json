@@ -24,7 +24,7 @@
 		"list_fields":
 		{
 			"id":"#",
-			"titulo":"Título"
+			"nome":"Nome"
 		}
 	},
 
@@ -54,11 +54,11 @@
 			
 			{
 				"label":true,
-				"name":"img",
+				"name":"banner",
 				"translate":"Imagem",
 				"type":"template",
 				"template": "default_imagem",
-				"id":"img",
+				"id":"banner",
 				"class":"",
 				"validate":""
             }
