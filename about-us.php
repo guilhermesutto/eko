@@ -6,7 +6,7 @@ $data = dbQuerySingle("about_us", "id = 1");
 
 ?>
       <!-- Breadcrumbs -->
-      <section class="breadcrumbs-custom bg-image context-dark" style="background-image: url(<?php echo $data->imgTitulo; ?>);">
+      <section class="breadcrumbs-custom bg-image context-dark" style="background-image: url(painel/public/uploads/about-us/<?php echo $data->imgTitulo; ?>);">
         <div class="breadcrumbs-custom-inner">
           <div class="container breadcrumbs-custom-container">
             <div class="breadcrumbs-custom-main">
@@ -41,7 +41,7 @@ $data = dbQuerySingle("about_us", "id = 1");
           <!-- Timeline Classic-->
           <article class="timeline-classic">
             <div class="timeline-classic-item">
-              <div class="timeline-classic-item-aside"><img class="timeline-classic-item-image" src="<?php echo $data->imgVisao; ?>" alt="" width="390" height="250"/>
+              <div class="timeline-classic-item-aside"><img class="timeline-classic-item-image" src="painel/public/uploads/about-us/<?php echo $data->imgVisao; ?>" alt="" width="390" height="250"/>
               </div>
               <div class="timeline-classic-item-divider"></div>
               <div class="timeline-classic-item-main">
@@ -50,7 +50,7 @@ $data = dbQuerySingle("about_us", "id = 1");
             </div>
             </div>
             <div class="timeline-classic-item">
-              <div class="timeline-classic-item-aside"><img class="timeline-classic-item-image" src="<?php echo $data->imgMissao; ?>" alt="" width="390" height="250"/>
+              <div class="timeline-classic-item-aside"><img class="timeline-classic-item-image" src="painel/public/uploads/about-us/<?php echo $data->imgMissao; ?>" alt="" width="390" height="250"/>
               </div>
               <div class="timeline-classic-item-divider"></div>
               <div class="timeline-classic-item-main">
@@ -59,7 +59,7 @@ $data = dbQuerySingle("about_us", "id = 1");
               </div>
             </div>
             <div class="timeline-classic-item">
-              <div class="timeline-classic-item-aside"><img class="timeline-classic-item-image" src="<?php echo $data->imgValor; ?>" alt="" width="390" height="250"/>
+              <div class="timeline-classic-item-aside"><img class="timeline-classic-item-image" src="painel/public/uploads/about-us/<?php echo $data->imgValor; ?>" alt="" width="390" height="250"/>
               </div>
               <div class="timeline-classic-item-divider"></div>
               <div class="timeline-classic-item-main">
