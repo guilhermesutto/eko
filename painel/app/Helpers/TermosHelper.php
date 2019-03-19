@@ -79,8 +79,8 @@ class TermosHelper
 
     }
 
-    public static function updateTermo($id, $termo){
-        $Model = Termos::find($id);
+    public static function updateTermo($id, $termo){        
+        $Model = Termos::find($id);        
         $Model->termo = $termo;
         $Model->save();
         

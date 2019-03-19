@@ -36,15 +36,15 @@ $Depoimentos = dbQuery("home_depoimentos");
                 <?php foreach($Depoimentos as $dep){ ?>         
                     <blockquote class="quote-classic">
                     <div class="quote-classic-meta">
-                        <div class="quote-classic-avatar"><img src="painel/public/uploads/depoimentos/<?php echo $dep->img; ?>" alt="" width="96" height="96"/>
+                        <div class="quote-classic-avatar"><img src="painel/public/uploads/depoimentos/<?php echo $dep->imagem; ?>" alt="" width="96" height="96"/>
                         </div>
                         <div class="quote-classic-info">
                         <cite class="quote-classic-cite"><?php echo $dep->nome; ?></cite>
-                        <p class="quote-classic-caption"><?php echo $dep->descricao; ?></p>
+                        <p class="quote-classic-caption"><?php echo getTermoById($dep->descricao); ?></p>
                         </div>
                     </div>
                     <div class="quote-classic-text">
-                        <p><?php echo $dep->depoimento; ?></p>
+                        <p><?php echo getTermoById($dep->depoimento); ?></p>
                     </div>
                     </blockquote>
                 <?php } ?>            

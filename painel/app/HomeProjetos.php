@@ -18,9 +18,9 @@ class HomeProjetos extends MyModel
             $data['titulo'] = \TermosHelper::saveTermo($data['titulo']);            
             $data['descricao'] = \TermosHelper::saveTermo($data['descricao']);            
         }else{
-            $DadosAntigos = Footer::find($data['id']);
-            \TermosHelper::updateTermo($DadosAntigos->titulo, $data['titulo']);            
-            \TermosHelper::updateTermo($DadosAntigos->descricao, $data['descricao']);            
+            $DadosAntigos = self::find($data['id']);
+            $data['titulo'] = \TermosHelper::updateTermo($DadosAntigos->titulo, $data['titulo']);            
+            $data['descricao'] = \TermosHelper::updateTermo($DadosAntigos->descricao, $data['descricao']);            
         }
 
 		return $data;

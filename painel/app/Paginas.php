@@ -19,7 +19,7 @@ class Paginas extends MyModel
             $data['titulo'] = \TermosHelper::saveTermo($data['titulo']);
             $data['conteudo'] = \TermosHelper::saveTermo($data['conteudo']);
         }else{
-            $DadosAntigos = Paginas::find($data['id']);
+            $DadosAntigos = self::find($data['id']);
             $data['conteudo'] = \TermosHelper::updateTermo($DadosAntigos->conteudo, $data['conteudo']);
             $data['titulo'] = \TermosHelper::updateTermo($DadosAntigos->titulo, $data['titulo']);
         }

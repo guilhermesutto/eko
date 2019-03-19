@@ -17,8 +17,8 @@ class Footer extends MyModel
         if(empty($data['id'])){
             $data['texto'] = \TermosHelper::saveTermo($data['texto']);            
         }else{
-            $DadosAntigos = Footer::find($data['id']);
-            \TermosHelper::updateTermo($DadosAntigos->texto, $data['texto']);            
+            $DadosAntigos = self::find($data['id']);
+            $data['texto'] = \TermosHelper::updateTermo($DadosAntigos->texto, $data['texto']);            
         }
 
 		return $data;

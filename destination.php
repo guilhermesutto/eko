@@ -41,13 +41,13 @@ function getProjetos($projetos){
         <div class="container">
         <div class="row row-30 row-md-50">
             <div class="descicao">
-                <?php echo $Destino->descricao; ?>
+                <?php echo getTermoById($Destino->descricao); ?>
             </div> 
             <div class="fees">
                 <h5>Fees</h5><hr />
                 <br>
                 <div class="textoFee">
-                    <?php echo $Destino->descricaoTaxa; ?>
+                    <?php echo getTermoById($Destino->descricaoTaxa); ?>
                 </div>
                 <br><br>
                 <div class="ulFess">

@@ -18,9 +18,9 @@ class HomeDepoimentos extends MyModel
             $data['depoimento'] = \TermosHelper::saveTermo($data['depoimento']);            
             $data['descricao'] = \TermosHelper::saveTermo($data['descricao']);            
         }else{
-            $DadosAntigos = Footer::find($data['id']);
-            \TermosHelper::updateTermo($DadosAntigos->depoimento, $data['depoimento']);            
-            \TermosHelper::updateTermo($DadosAntigos->descricao, $data['descricao']);            
+            $DadosAntigos = self::find($data['id']);
+            $data['depoimento'] = \TermosHelper::updateTermo($DadosAntigos->depoimento, $data['depoimento']);            
+            $data['descricao'] = \TermosHelper::updateTermo($DadosAntigos->descricao, $data['descricao']);            
         }
         
         if(!empty($data['imagem'])){            

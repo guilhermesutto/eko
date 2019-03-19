@@ -140,10 +140,13 @@ class FormHelper
 
 					$input.="<option value='0'>".((isset($placeholder) && ( !isset($label) || !$label))?$placeholder:'Selecione:')."</option>";
 
-					if(isset($values)){
-
-						foreach($values AS $key => $val){
-							$input.="<option value='".$key."' ". (($key==$value)?'selected="selected"':'') .">".$val."</option>";
+					if(isset($values)){						
+						foreach($values AS $key => $val){							
+							$termo = $val;
+							if(isset($multiplo)){								
+								$termo = \TermosHelper::getTermo($val);
+							}
+							$input.="<option value='".$key."' ". (($key==$value)?'selected="selected"':'') .">".$termo."</option>";
 						}
 
 					} else {
@@ -174,8 +177,11 @@ class FormHelper
 								if( !isset($seed) ){
 									exit('No seed found!');
 								}
-
-								$input.='<option value="'.$val->id.'" '. (($value == $val->id)?'selected="selected"':'') .' '.$data_attr.'>'.(method_exists($val, 'get_seed')?$val->get_seed():$val->$seed).'</option>';
+								if(isset($multiplo)){	
+									$input.='<option value="'.$val->id.'" '. (($value == $val->id)?'selected="selected"':'') .' '.$data_attr.'>'.(method_exists($val, 'get_seed')?\TermosHelper::getTermo($val->get_seed()):\TermosHelper::getTermo($val->$seed)).'</option>';
+								}else{
+									$input.='<option value="'.$val->id.'" '. (($value == $val->id)?'selected="selected"':'') .' '.$data_attr.'>'.(method_exists($val, 'get_seed')?$val->get_seed():$val->$seed).'</option>';
+								}	
 							}
 						}
 					}

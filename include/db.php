@@ -47,3 +47,23 @@
         
         return (object) $array;
     }
+
+    function getTermoById($id){
+        global $conn;
+        $lang = 2;
+
+        if($lang == 2){
+            $data = $conn->query("SELECT * FROM termos WHERE id = $id AND id_lingua = $lang LIMIT 1");
+            //echo "SELECT * FROM termos WHERE id = $id AND id_lingua = $lang LIMIT 1"; exit;
+        }else{
+            $data = $conn->query("SELECT * FROM termos WHERE id_pai = $id AND id_lingua = $lang LIMIT 1");
+        }
+
+        $retorno = [];
+        while($row = $data->fetch(PDO::FETCH_OBJ)) {
+            $retorno = $row;
+        }
+
+        return utf8_encode($retorno->termo);
+
+    }

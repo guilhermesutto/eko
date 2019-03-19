@@ -21,9 +21,9 @@ class Destinos extends MyModel
             $data['descricaoTaxa'] = \TermosHelper::saveTermo($data['descricaoTaxa']);            
             $data['descricao'] = \TermosHelper::saveTermo($data['descricao']);            
         }else{
-            $DadosAntigos = Footer::find($data['id']);
-            \TermosHelper::updateTermo($DadosAntigos->titulo, $data['titulo']);            
-            \TermosHelper::updateTermo($DadosAntigos->descricao, $data['descricao']);            
+            $DadosAntigos = self::find($data['id']);
+            $data['descricaoTaxa'] = \TermosHelper::updateTermo($DadosAntigos->descricaoTaxa, $data['descricaoTaxa']);            
+            $data['descricao'] = \TermosHelper::updateTermo($DadosAntigos->descricao, $data['descricao']);            
         }
         
         if(!empty($data['bandeiraPais'])){            

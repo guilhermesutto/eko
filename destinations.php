@@ -47,7 +47,7 @@ function getProjetos($projetos){
                         <h4><a class="card-modern-title" href="#"><?php echo $destino->cidade; ?></a></h4>                        
                         <div class="card-modern-info"><span class="icon icon-sm mdi mdi-information-outline"></span><span class="card-modern-info-text"><?php echo $projetos; ?></span></div>
                         <div class="card-modern-text">
-                        <p><?php echo substr(strip_tags($destino->descricao), 0, 50); ?></p>
+                        <p><?php echo substr(strip_tags(getTermoById($destino->descricao)), 0, 50); ?></p>
                         <p><a href="destination.php?id=<?php echo $destino->id; ?>"><b>See more</b></a></p>
                         </div>
                     </div>
