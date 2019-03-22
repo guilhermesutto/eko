@@ -1,23 +1,46 @@
 <?php
 
-    if(!empty($_POST['semanas'])){
-        $headers = "MIME-Version: 1.1\r\n";
-        $headers .= "Content-type: text/plain; charset=UTF-8\r\n";
-       // $headers .= "From: eko@ekolunteers.com\r\n"; // remetente
-       // $headers .= "Return-Path: eko@ekolunteers.com\r\n"; // return-path
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-        $body = "Foi feita uma solicitação de inscrição pelo site, segue as informações desse voluntário: \n\n ";
-        foreach($_POST as $key=>$value){
-            $body .= ucwords($key)." : ".$value." \n "; 
-        }
+    if(!empty($_POST['semanas'])){        
 
+        require 'include/PHPMailer/src/Exception.php';
+        require 'include/PHPMailer/src/PHPMailer.php';
+        require 'include/PHPMailer/src/SMTP.php';
 
-        $envio = mail("guilhermesutto91@gmail.com", "Inscrição Feita pelo site", $body, $headers);
-        //$envio = mail("gabriella@ekolunteers.com", "Inscrição Feita pelo site", $body, $headers);
-        
-        if($envio)
-        echo "Mensagem enviada com sucesso";
-        else
-        echo "A mensagem não pode ser enviada";
+        // Instantiation and passing `true` enables exceptions
+        $mail = new PHPMailer(true);
+
+        try {
+            //Server settings
+            //$mail->SMTPDebug = 2;                                       // Enable verbose debug output
+            $mail->isSMTP();                                            // Set mailer to use SMTP
+            $mail->Host       = 'smtpout.secureserver.net';  // Specify main and backup SMTP servers
+            $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+            $mail->Username   = 'gabriella@ekovolunteers.com';                     // SMTP username
+            $mail->Password   = 'gabi@eko123';                               // SMTP password
+            $mail->SMTPSecure = 'tls';                                  // Enable TLS encryption, `ssl` also accepted
+            $mail->Port       = 587;                                    // TCP port to connect to
+
+            //Recipients
+            $mail->setFrom('gabriella@ekovolunteers.com', 'Eko Alliance');
+            $mail->addAddress('guilhermesutto91@gmail.com');     // Add a recipient            
+
+            // Content
+            $mail->isHTML(true);                                  // Set email format to HTML
+            $mail->Subject = 'Inscrição realizada pelo site';
+
+            $body = "Foi feita uma solicitação de inscrição pelo site, segue as informações desse voluntário: <br> <br> ";
+            foreach($_POST as $key=>$value){
+                $body .= ucwords($key).": ".$value." <br> "; 
+            }
+            $mail->Body    = $body;
+            
+            $envio = $mail->send();
+            echo '1';
+        } catch (Exception $e) {
+            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        }       
 
     }

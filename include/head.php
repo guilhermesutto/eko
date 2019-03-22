@@ -38,14 +38,17 @@
                     <ul class="rd-navbar-nav">
                       <li class="rd-nav-item active"><a class="rd-nav-link" href="index.php">Home</a>
                       </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="about-us.php">About us</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="projects.php">Projects</a>
+                      </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="destinations.php">Destinations</a>
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="fees.php">Fees</a>
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="testimonals.php">Testimonials</a>
                       </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="about-us.php">About us</a>
-                      </li>
+                      
                      <!-- <li class="rd-nav-item"><a class="rd-nav-link" href="#">Pages</a>
                          RD Navbar Megamenu
                         <ul class="rd-menu rd-navbar-megamenu">
@@ -87,7 +90,7 @@
                           <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="single-blog-post.html">Single Blog Post</a></li>
                         </ul>
                       </li>-->
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.php">Contacts</a>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.php">Contact us</a>
                       </li>
                     </ul>
                   </div>

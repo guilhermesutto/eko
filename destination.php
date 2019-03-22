@@ -108,7 +108,7 @@ function getProjetos($projetos){
           </div>
           <div class="modal-body">
             <p>We need some informations before you can apply. After sends the formulary, one of our people will enter in contact with you.</p>
-            <form class="rd-form rd-mailform form-inline form-inline-custom" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="">
+            <form class="form-inline form-inline-custom" method="post" action="">
               <input type="hidden" id="cidade" value="<?php echo $Destino->cidade; ?>" />
               <div class="form-wrap">
                 <input class="form-input" id="nome" type="text" name="nome">
@@ -152,17 +152,34 @@ function getProjetos($projetos){
                 $("#applyModal").modal();
             });
 
+            $(".form-input").on("keyup", function(){
+              if($(this).val() != ""){
+                $(this).next().hide();
+              }else{
+                $(this).next().show();
+              }
+            });
+
             $("#btnApplySubmit").on("click", function(){
                 var cidade = $("#cidade").val();
                 var nome = $("#nome").val();
                 var email = $("#email").val();
                 var semanas = $("#semanas").val();
 
-                $.post('send-email.php', { cidade: cidade, nome: nome, email: email, semanas: semanas}, function(data){
-                    alert(data);
+                $.ajax({
+                  method: "POST",
+                  url: "send-email.php",
+                  data: {cidade: cidade, nome: nome, email: email, semanas: semanas},
+                  async: false
+                })
+                  .done(function (data) {
+                    if(data == 1) alert("Sua inscrição foi enviada com sucesso, logo entraremos em contato!");
+                    else alert("Ocorreu um erro ao enviar sua solicitação, por favor tente novamente mais tarde!");
                 });
-                
 
+                location.reload();
+
+                return false;
             });
         });
     </script>
