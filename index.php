@@ -18,8 +18,8 @@ function getProjetos($projetos){
     $Ids = explode(",", $projetos);
     $retorno = "";
     foreach($Ids as $id){
-        $projeto = dbQuerySingle("home_projetos","id = $id");
-        $retorno .= $projeto->titulo." ";
+        $projeto = dbQuerySingle("home_projetos","id = $id");        
+        $retorno .= getTermoById( $projeto->titulo )." ";        
     }
 
     return $retorno;
@@ -142,7 +142,7 @@ function getProjetos($projetos){
                         <h4><a class="card-modern-title" href="#"><?php echo $destino->cidade; ?></a></h4>                        
                         <div class="card-modern-info"><span class="icon icon-sm mdi mdi-information-outline"></span><span class="card-modern-info-text"><?php echo $projetos; ?></span></div>
                         <div class="card-modern-text">
-                        <p><?php echo substr(strip_tags($destino->descricao), 0, 50); ?></p>
+                        <p><?php echo substr(strip_tags(getTermoById($destino->descricao)), 0, 50); ?></p>
                         <p><a href="destination.php?id=<?php echo $destino->id; ?>"><b>See more</b></a></p>
                         </div>
                     </div>
@@ -171,8 +171,8 @@ function getProjetos($projetos){
                       <!-- Box Creative-->
                       <article class="box-creative wow slideInLeft">
                         <div class="box-creative-icon">'.$value->icone.'</div>
-                        <h4 class="box-creative-title"><a href="#">'.strip_tags($value->titulo).'</a></h4>
-                        <p>'.strip_tags(substr($value->descricao, 0, 194)).' ...</p>
+                        <h4 class="box-creative-title"><a href="#">'.strip_tags( getTermoById( $value->titulo ) ).'</a></h4>
+                        <p>'.strip_tags( substr( getTermoById($value->descricao), 0, 194 ) ).' ...</p>
                       </article>
                     </div>
                   ';
@@ -195,14 +195,14 @@ function getProjetos($projetos){
                               <path d="M27.461,10.206h7.5v15h-15v-15L25,0.127h7.5L27.461,10.206z M7.539,10.206h7.5v15h-15v-15L4.961,0.127h7.5                L7.539,10.206z"></path>
                             </svg>
                             <div class="quote-modern-text">
-                              <p>'.$value->depoimento.'</p>
+                              <p>'.getTermoById($value->depoimento).'</p>
                             </div>
                             <div class="quote-modern-meta">
                               <div class="quote-modern-avatar"><img src="images/testimonials-person-1-96x96.jpg" alt="" width="96" height="96"/>
                               </div>
                               <div class="quote-modern-info">
-                                <cite class="quote-modern-cite">'.$value->nome.'</cite>
-                                <p class="quote-modern-caption">'.$value->descricao.'</p>
+                                <cite class="quote-modern-cite">'. $value->nome .'</cite>
+                                <p class="quote-modern-caption">'.getTermoById( $value->descricao ).'</p>
                               </div>
                             </div>
                           </blockquote>

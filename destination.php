@@ -108,7 +108,8 @@ function getProjetos($projetos){
           </div>
           <div class="modal-body">
             <p>We need some informations before you can apply. After sends the formulary, one of our people will enter in contact with you.</p>
-            <form class="rd-form rd-mailform form-inline form-inline-custom" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
+            <form class="rd-form rd-mailform form-inline form-inline-custom" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="">
+              <input type="hidden" id="cidade" value="<?php echo $Destino->cidade; ?>" />
               <div class="form-wrap">
                 <input class="form-input" id="nome" type="text" name="nome">
                 <label class="form-label" for="header-phone">Name</label>
@@ -131,7 +132,7 @@ function getProjetos($projetos){
                 </select>               
               </div>
               <div class="form-button">
-                <button class="button button-primary">Submit</button>
+                <button class="button button-primary" id="btnApplySubmit">Submit</button>
               </div>
             </form>
           </div>
@@ -149,6 +150,19 @@ function getProjetos($projetos){
         $(document).ready(function(){
             $("#btnApply").on("click", function(){
                 $("#applyModal").modal();
+            });
+
+            $("#btnApplySubmit").on("click", function(){
+                var cidade = $("#cidade").val();
+                var nome = $("#nome").val();
+                var email = $("#email").val();
+                var semanas = $("#semanas").val();
+
+                $.post('send-email.php', { cidade: cidade, nome: nome, email: email, semanas: semanas}, function(data){
+                    alert(data);
+                });
+                
+
             });
         });
     </script>

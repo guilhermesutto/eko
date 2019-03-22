@@ -10,7 +10,7 @@ function getProjetos($projetos){
     $retorno = "";
     foreach($Ids as $id){
         $projeto = dbQuerySingle("home_projetos","id = $id");
-        $retorno .= $projeto->titulo." ";
+        $retorno .= getTermoById($projeto->titulo)." ";
     }
 
     return $retorno;
