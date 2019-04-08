@@ -4,11 +4,12 @@ include("include/head.php");
 include("include/db.php");
 
 $Footer = dbQuerySingle("footer", "id = 1");
+$Banner = dbQuerySingle("banners", "id = 2");
 
 
 ?>
       <!-- Breadcrumbs -->
-      <section class="breadcrumbs-custom bg-image context-dark" style="background-image: url(images/breadcrumbs-image-1.jpg);">
+      <section class="breadcrumbs-custom bg-image context-dark" style="background-image: url(painel/public/uploads/about-us/<?php echo $Banner->banner; ?>);">
         <div class="breadcrumbs-custom-inner">
           <div class="container breadcrumbs-custom-container">
             <div class="breadcrumbs-custom-main">
