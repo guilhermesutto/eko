@@ -4,7 +4,7 @@ include("include/head.php");
 include("include/db.php");
 
 $Footer = dbQuerySingle("footer", "id = 1");
-$Banner = dbQuerySingle("banners", "id = 2");
+$Banner = dbQuerySingle("banners", "id = 3");
 
 
 ?>
