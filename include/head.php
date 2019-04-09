@@ -40,6 +40,8 @@
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="about-us.php">About us</a>
                       </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="apply.php">Apply Now</a>
+                      </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="projects.php">Projects</a>
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="destinations.php">Destinations</a>

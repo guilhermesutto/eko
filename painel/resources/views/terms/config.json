@@ -1,0 +1,62 @@
+{
+	"index":
+	{
+		"scripts":
+		[
+			"/assets/scripts/modules/paginas.js"
+		],
+
+		"styles":
+		[
+
+		],
+
+		"fields":
+		[
+
+		],
+
+		"modals":
+		[
+
+		],
+
+		"list_fields":
+		{
+			"id":"#",
+			"termo":"Termo"			
+		}
+	},
+
+	"form":
+	{
+		"scripts":
+		[
+			"/eko/painel/public/js/paginas.js"
+		],
+
+		"styles":
+		[
+
+		],
+
+		"fields":
+		[
+			{
+				"label":true,
+				"name":"termo",
+				"translate":"Termo",
+				"type":"textarea",				
+                "id":"termo",
+                "rows":"30",                
+				"class":"",
+				"validate":""
+			}
+		],
+
+		"modals":
+		[
+
+		]
+	}
+}

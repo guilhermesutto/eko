@@ -14,7 +14,7 @@ $Footer = dbQuerySingle("footer", "id = 1");
                     <div class="col-lg-4">
                       <div class="inset-right-1">
                         <h4>About Us</h4>
-                        <p><?php echo $Footer->texto; ?></p>
+                        <p><?php echo getTermobyId($Footer->texto); ?></p>
                       </div>
                     </div>
                     <div class="col-sm-6 col-md-5 col-lg-4">

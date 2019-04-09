@@ -26,11 +26,12 @@ use PHPMailer\PHPMailer\Exception;
             //Recipients
             $mail->setFrom('gabriella@ekovolunteers.com', 'Eko Alliance');
             $mail->addAddress('guilhermesutto91@gmail.com');     // Add a recipient            
+            //$mail->addAddress('gabriella@ekovolunteers.com');     // Add a recipient            
 
             // Content
             $mail->isHTML(true);                                  // Set email format to HTML
             $mail->Subject = 'Inscrição realizada pelo site';
-
+            
             $body = "Foi feita uma solicitação de inscrição pelo site, segue as informações desse voluntário: <br> <br> ";
             foreach($_POST as $key=>$value){
                 $body .= ucwords($key).": ".$value." <br> "; 
