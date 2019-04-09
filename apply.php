@@ -240,7 +240,7 @@ $terms = dbQuerySingle("terms", "id = 1");
                 else alert("Ocorreu um erro ao enviar sua solicitação, por favor tente novamente mais tarde!");
             });
 
-            location.reload();
+            //location.reload();
 
             return false;
             
