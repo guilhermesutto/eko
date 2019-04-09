@@ -19,9 +19,9 @@ use PHPMailer\PHPMailer\Exception;
             $mail->Host       = 'smtpout.secureserver.net';  // Specify main and backup SMTP servers
             $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
             $mail->Username   = 'gabriella@ekovolunteers.com';                     // SMTP username
-            $mail->Password   = 'gabi@eko1234';                               // SMTP password
+            $mail->Password   = 'eko@mail123';                               // SMTP password
             $mail->SMTPSecure = 'tls';                                  // Enable TLS encryption, `ssl` also accepted
-            $mail->Port       = 3535;                                    // TCP port to connect to
+            $mail->Port       = 587;                                    // TCP port to connect to
 
             //Recipients
             $mail->setFrom('gabriella@ekovolunteers.com', 'Eko Alliance');
