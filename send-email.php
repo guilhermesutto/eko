@@ -3,7 +3,7 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-    if(!empty($_POST['semanas'])){        
+    //if(!empty($_POST['semanas'])){        
 
         require 'include/PHPMailer/src/Exception.php';
         require 'include/PHPMailer/src/PHPMailer.php';
@@ -44,4 +44,4 @@ use PHPMailer\PHPMailer\Exception;
             echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }       
 
-    }
+    //}
