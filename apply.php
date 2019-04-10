@@ -9,7 +9,7 @@ if(isset($_POST['genre'])){
 
 $Destinos = dbQuery("destinos");
 $Projetos = dbQuery("home_projetos");
-$terms = dbQuerySingle("terms", "id = 1");
+$terms = dbQuerySingle("terms", "id = 3");
 
 ?>
 <style>
