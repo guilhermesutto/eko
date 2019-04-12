@@ -21,7 +21,7 @@ function getProjetos($projetos){
 
 ?>
       <!-- Breadcrumbs -->
-      <section class="breadcrumbs-custom bg-image context-dark" style="background-image: url(images/breadcrumbs-image-2.jpg);">
+      <section class="breadcrumbs-custom bg-image context-dark" style="background-image: url(painel/public/uploads/destinos/<?php echo $Destino->imagem; ?>);">
         <div class="breadcrumbs-custom-inner">
           <div class="container breadcrumbs-custom-container">
             <div class="breadcrumbs-custom-main">
