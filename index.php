@@ -198,7 +198,7 @@ function getProjetos($projetos){
                               <p>'.getTermoById($value->depoimento).'</p>
                             </div>
                             <div class="quote-modern-meta">
-                              <div class="quote-modern-avatar"><img src="painel/public/uploads/depoimentos/'.$dep->imagem.'" alt="" width="96" height="96"/>
+                              <div class="quote-modern-avatar"><img src="painel/public/uploads/depoimentos/'.$value->imagem.'" alt="" width="96" height="96"/>
                               </div>
                               <div class="quote-modern-info">
                                 <cite class="quote-modern-cite">'. $value->nome .'</cite>
