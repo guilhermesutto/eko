@@ -44,7 +44,7 @@ return [
             'host' => env('DB_HOST', '167.99.14.129'),
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'eko_alliance'),
-            'username' => env('DB_USERNAME', 'eko'),
+            'username' => env('DB_USERNAME', 'root'),
             'password' => env('DB_PASSWORD', 'webshark'),            
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
