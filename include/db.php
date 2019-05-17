@@ -1,7 +1,7 @@
 <?php
     $host = "167.99.14.129";
     $dbName = "eko_alliance";
-    $username = "root";
+    $username = "roots";
     $password = "webshark";    
 
     try {
