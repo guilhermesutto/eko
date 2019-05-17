@@ -1,14 +1,13 @@
 <?php
     $host = "167.99.14.129";
     $dbName = "eko_alliance";
-    $username = "roots";
+    $username = "root";
     $password = "webshark";    
 
     try {
         $conn = new PDO("mysql:host=$host;dbname=$dbName", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch(PDOException $e) {
-        mail("guilhermesutto91@gmail.com","Site fora do ar","Arruma la aquela merda"); 
+    } catch(PDOException $e) {        
         echo " <script>window.location.href = 'http://ekovolunteers.com/manutencao.html';</script>";        
     }
 
