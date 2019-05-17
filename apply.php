@@ -3,10 +3,6 @@
 include("include/head.php");
 include("include/db.php");
 
-if(isset($_POST['genre'])){
-
-}
-
 $Destinos = dbQuery("destinos");
 $Projetos = dbQuery("home_projetos");
 $terms = dbQuerySingle("terms", "id = 3");

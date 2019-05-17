@@ -1,5 +1,5 @@
 <?php
-
+include("include/db.php");
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -34,6 +34,9 @@ use PHPMailer\PHPMailer\Exception;
             
             $body = "Foi feita uma solicitação de inscrição pelo site, segue as informações desse voluntário: <br> <br> ";
             foreach($_POST as $key=>$value){
+                if($key == 'Project'){                    
+                    $body .= ucwords($key).": ".getTermobyId($value)." <br> "; 
+                }
                 $body .= ucwords($key).": ".$value." <br> "; 
             }
             $mail->Body    = $body;
