@@ -8,7 +8,7 @@
         $conn = new PDO("mysql:host=$host;dbname=$dbName", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     } catch(PDOException $e) {
-       $restart =  exec("/etc/init.d/mysql start");
+       $restart =  shell_exec("/etc/init.d/mysql start");
        echo $restart;
         //header("Refresh: 0");        
         //echo 'ERROR: ' . $e->getMessage();
