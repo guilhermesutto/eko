@@ -30,14 +30,15 @@ use PHPMailer\PHPMailer\Exception;
 
             // Content
             $mail->isHTML(true);                                  // Set email format to HTML
-            $mail->Subject = utf8_encode('Inscrição realizada pelo site');
+            $mail->Subject = utf8_decode('Inscrição realizada pelo site');
             
             $body = "Foi feita uma solicitação de inscrição pelo site, segue as informações desse voluntário: <br> <br> ";
             foreach($_POST as $key=>$value){
                 if($key == 'project'){                    
                     $body .= ucwords($key).": ".getTermobyId($value)." <br> "; 
-                }
-                $body .= ucwords($key).": ".$value." <br> "; 
+                }else{
+                    $body .= ucwords($key).": ".$value." <br> "; 
+                }    
             }
             $mail->Body    = $body;
             
