@@ -28,4 +28,22 @@
             We're undergoing maintenance, please come back later.
         </h3>
   </body>
+
+  <script src="js/core.min.js"></script>
+<script src="js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.js"></script>
+  <script>
+      $(document).ready(function(){
+            $.ajax({
+                method: "POST",
+                url: "send-mail-caiu.php",
+                data: {caiu: 1},
+                async: false
+            })
+                .done(function (data) {
+                if(data == 1) console.log("enviou aviso");
+                else console.log("Erro no envio do aviso");
+            });
+      });
+  </script>
 </html>
