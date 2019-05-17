@@ -11,6 +11,8 @@ $Destinos = dbQuery("destinos");
 $Projetos = dbQuery("home_projetos");
 $terms = dbQuerySingle("terms", "id = 3");
 
+$Banner = dbQuerySingle("banners", "id = 8");
+
 ?>
 <style>
     body{
@@ -18,7 +20,7 @@ $terms = dbQuerySingle("terms", "id = 3");
     }
 </style>
       <!-- Breadcrumbs -->
-      <section class="breadcrumbs-custom bg-image context-dark" style="background-image: url(images/breadcrumbs-image-2.jpg);">
+      <section class="breadcrumbs-custom bg-image context-dark" style="background-image: url(painel/public/uploads/about-us/<?php echo $Banner->banner; ?>);">
         <div class="breadcrumbs-custom-inner">
           <div class="container breadcrumbs-custom-container">
             <div class="breadcrumbs-custom-main">

@@ -18,13 +18,13 @@ use PHPMailer\PHPMailer\Exception;
             $mail->isSMTP();                                            // Set mailer to use SMTP
             $mail->Host       = 'smtpout.secureserver.net';  // Specify main and backup SMTP servers
             $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-            $mail->Username   = 'gabriella@ekovolunteers.com';                     // SMTP username
-            $mail->Password   = 'eko@mail123';                               // SMTP password
+            $mail->Username   = 'contact@ekovolunteers.com';                     // SMTP username
+            $mail->Password   = '$k0volunteers';                               // SMTP password
             $mail->SMTPSecure = 'tls';                                  // Enable TLS encryption, `ssl` also accepted
             $mail->Port       = 587;                                    // TCP port to connect to
 
             //Recipients
-            $mail->setFrom('gabriella@ekovolunteers.com', 'Eko Alliance');
+            $mail->setFrom('contact@ekovolunteers.com', 'Eko Alliance');
             $mail->addAddress('guilhermesutto91@gmail.com');     // Add a recipient            
             //$mail->addAddress('gabriella@ekovolunteers.com');     // Add a recipient            
 
