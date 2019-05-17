@@ -1,16 +1,14 @@
 <?php
     $host = "167.99.14.129";
     $dbName = "eko_alliance";
-    $username = "root";
+    $username = "roots";
     $password = "webshark";    
 
     try {
         $conn = new PDO("mysql:host=$host;dbname=$dbName", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch(PDOException $e) {
-       $restart =  shell_exec("/etc/init.d/mysql start");
-       echo $restart;
-        //header("Refresh: 0");        
+    } catch(PDOException $e) {       
+        header("Location: manutencao.html");        
         //echo 'ERROR: ' . $e->getMessage();
     }
 
