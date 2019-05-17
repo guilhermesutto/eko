@@ -7,9 +7,9 @@
     try {
         $conn = new PDO("mysql:host=$host;dbname=$dbName", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch(PDOException $e) {       
-        //header("Location: manutencao.html");
-        echo 123;         
+    } catch(PDOException $e) { 
+        echo " <script>window.location.href = 'http://ekovolunteers.com./manutencao.html';</script>";
+        //header("Location: manutencao.html");        
         //echo 'ERROR: ' . $e->getMessage();
     }
 
