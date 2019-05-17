@@ -107,8 +107,12 @@ $Banner = dbQuerySingle("banners", "id = 8");
                 </div>
                 <div class="row">
                     <div class="col-md-6">
+                        <label>Phone</label>
+                        <input type="text" name="phone" id="phone" class="form-control" />                            
+                    </div>
+                    <div class="col-md-6">
                         <label>How did you know about Eko volunteers?</label>
-                        <input type="text" name="how" id="how" class="form-control" />                            
+                        <input type="text" name="howDidKnow" id="how" class="form-control" />                            
                     </div>                    
                 </div> 
                 <div class="row">
@@ -226,11 +230,12 @@ $Banner = dbQuerySingle("banners", "id = 8");
             var date = $("#date").val();
             var email = $("#email").val();
             var how = $("#how").val();
+            var phone = $("#phone").val();
 
             $.ajax({
                 method: "POST",
                 url: "send-email.php",
-                data: {project: project, destination: destination, name: name, lastname: lastname, nickname: nickname, genre: genre, nationality: nationality, date: date, email: email, how: how},
+                data: {project: project, destination: destination, name: name, lastname: lastname, nickname: nickname, genre: genre, nationality: nationality, date: date, email: email, how: how, phone: phone},
                 async: false
             })
                 .done(function (data) {

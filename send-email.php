@@ -26,7 +26,7 @@ use PHPMailer\PHPMailer\Exception;
             //Recipients
             $mail->setFrom('contact@ekovolunteers.com', 'Eko Alliance');
             $mail->addAddress('guilhermesutto91@gmail.com');     // Add a recipient            
-            //$mail->addAddress('gabriella@ekovolunteers.com');     // Add a recipient            
+            $mail->addAddress('gabriella@ekovolunteers.com');     // Add a recipient            
 
             // Content
             $mail->isHTML(true);                                  // Set email format to HTML
