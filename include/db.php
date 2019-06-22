@@ -1,6 +1,6 @@
 <?php
-    $host = "127.0.0.1";
-    $dbName = "eko_alliance";
+    $host = "167.99.14.129";
+    $dbName = "eko";
     $username = "webshark";
     $password = "dbweb";    
 
