@@ -1,8 +1,8 @@
 <?php
     $host = "167.99.14.129";
     $dbName = "eko_alliance";
-    $username = "root";
-    $password = "webshark";    
+    $username = "webshark";
+    $password = "dbweb";    
 
     try {
         $conn = new PDO("mysql:host=$host;dbname=$dbName", $username, $password);
