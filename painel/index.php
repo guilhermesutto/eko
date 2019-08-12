@@ -6,7 +6,7 @@
  * @package  Laravel
  * @author   Taylor Otwell <taylor@laravel.com>
  */
-echo 1234; exit;
+
 define('LARAVEL_START', microtime(true));
 
 /*
@@ -46,6 +46,8 @@ foreach (scandir($HelperPath) as $filename) {
 		require $path; 
     }
 }
+
+echo 135645; exit;
 
 /*
 |--------------------------------------------------------------------------
