@@ -30,6 +30,7 @@ Route::post('home-deletar-imagem', function(){
 });
 
 Route::get('/', function(){
+    echo 123; exit;
     return redirect('login');
 });
 
