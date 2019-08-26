@@ -11,7 +11,7 @@ use PHPMailer\PHPMailer\Exception;
 
         // Instantiation and passing `true` enables exceptions
         $mail = new PHPMailer(true);
-
+echo 13; exit;
         try {
             //Server settings
             //$mail->SMTPDebug = 2;                                       // Enable verbose debug output
