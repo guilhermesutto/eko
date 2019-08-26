@@ -20,14 +20,14 @@ use PHPMailer\PHPMailer\Exception;
             $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
             $mail->Username   = 'contact@ekovolunteers.com';                     // SMTP username
             $mail->Password   = 'c0nt@ct123';                               // SMTP password
-            //$mail->SMTPSecure = 'tls';                                  // Enable TLS encryption, `ssl` also accepted
+            $mail->SMTPSecure = 'tls';                                  // Enable TLS encryption, `ssl` also accepted
             $mail->Port       = 3535;                                    // TCP port to connect to
 
             //Recipients
             $mail->setFrom('contact@ekovolunteers.com', 'Eko Alliance');
             $mail->addAddress('guilhermesutto91@gmail.com');     // Add a recipient            
-           // $mail->addAddress('gabriella@ekovolunteers.com');     // Add a recipient            
-            //$mail->addAddress('gabriellalmachado1@gmail.com');     // Add a recipient            
+            $mail->addAddress('gabriella@ekovolunteers.com');     // Add a recipient            
+            $mail->addAddress('gabriellalmachado1@gmail.com');     // Add a recipient            
 
             // Content
             $mail->isHTML(true);                                  // Set email format to HTML
