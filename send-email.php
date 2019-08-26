@@ -19,21 +19,21 @@ use PHPMailer\PHPMailer\Exception;
             $mail->Host       = 'smtpout.secureserver.net';  // Specify main and backup SMTP servers
             $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
             $mail->Username   = 'contact@ekovolunteers.com';                     // SMTP username
-            $mail->Password   = '$k0volunteers';                               // SMTP password
+            $mail->Password   = 'c0nt@ct123';                               // SMTP password
             $mail->SMTPSecure = 'tls';                                  // Enable TLS encryption, `ssl` also accepted
             $mail->Port       = 587;                                    // TCP port to connect to
 
             //Recipients
             $mail->setFrom('contact@ekovolunteers.com', 'Eko Alliance');
             $mail->addAddress('guilhermesutto91@gmail.com');     // Add a recipient            
-            $mail->addAddress('gabriella@ekovolunteers.com');     // Add a recipient            
-            $mail->addAddress('gabriellalmachado1@gmail.com');     // Add a recipient            
+           // $mail->addAddress('gabriella@ekovolunteers.com');     // Add a recipient            
+            //$mail->addAddress('gabriellalmachado1@gmail.com');     // Add a recipient            
 
             // Content
             $mail->isHTML(true);                                  // Set email format to HTML
             $mail->Subject = utf8_decode('Inscrição realizada pelo site');
             
-            $body = "Foi feita uma solicitação de inscrição pelo site, segue as informações desse voluntário: <br> <br> ";
+            $body = utf8_decode("Foi feita uma solicitação de inscrição pelo site, segue as informações desse voluntário:")." <br> <br> ";
             foreach($_POST as $key=>$value){
                 if($key == 'project'){                    
                     $body .= ucwords($key).": ".getTermobyId($value)." <br> "; 
