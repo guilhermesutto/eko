@@ -20,8 +20,8 @@ use PHPMailer\PHPMailer\Exception;
             $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
             $mail->Username   = 'contact@ekovolunteers.com';                     // SMTP username
             $mail->Password   = 'c0nt@ct123';                               // SMTP password
-            $mail->SMTPSecure = 'ssl';                                  // Enable TLS encryption, `ssl` also accepted
-            $mail->Port       = 465;                                    // TCP port to connect to
+            //$mail->SMTPSecure = 'tls';                                  // Enable TLS encryption, `ssl` also accepted
+            $mail->Port       = 3535;                                    // TCP port to connect to
 
             //Recipients
             $mail->setFrom('contact@ekovolunteers.com', 'Eko Alliance');
