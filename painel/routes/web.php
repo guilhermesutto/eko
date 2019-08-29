@@ -30,7 +30,6 @@ Route::post('home-deletar-imagem', function(){
 });
 
 Route::get('/', function(){
-    echo 123; exit;
     return redirect('login');
 });
 
@@ -45,10 +44,8 @@ Route::post('getTermo', "TermosController@getTermo");
 Route::post('saveTermoByLang', "TermosController@saveTermoByLang");
 
 Route::post('/login', "Controller@login");
-Route::get('/login', function(){
-    echo 1234; exit;
-});
-//Route::get('/login', "Controller@login");
+
+Route::get('/login', "Controller@login");
 
 Route::get('home', "HomeController@dash");
 
