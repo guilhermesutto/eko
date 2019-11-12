@@ -10,7 +10,9 @@ use App\Home;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::post("add-news", function(){
+    print_r($_POST); exit;
+});
 Route::post('home-deletar-imagem', function(){
     
     $Model = Home::find(1);
@@ -72,6 +74,4 @@ Route::post("home-banner", "HomeController@banner");
 Route::get("home-banner", "HomeController@banner");
 Route::post("home-banner/{id}", "HomeController@banner");
 Route::get("home-banner/{id}", "HomeController@banner");
-Route::post("add-news", function(){
-    print_r($_POST); exit;
-});
+
