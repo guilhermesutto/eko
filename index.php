@@ -296,7 +296,7 @@ function getProjetos($projetos){
 
       $(document).ready(function(){
 
-        $("#btnNews").on("click", function(
+        $("#btnNews").on("click", function(){
           var email = $("#subscribe-email").val();
 
           if(email != ""){
