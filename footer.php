@@ -33,7 +33,7 @@ $Footer = dbQuerySingle("footer", "id = 1");
             <!-- RD Mailform-->
             <form class="rd-form rd-mailform form-inline" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
               <div class="form-wrap">
-                <input class="form-input" id="subscribe-form-2-email" type="email" name="email" data-constraints="@Email @Required">
+                <input class="form-input" id="subscribe-email" type="email" name="email" data-constraints="@Email @Required">
                 <label class="form-label" for="subscribe-form-2-email">E-mail</label>
               </div>
               <div class="form-button">
@@ -51,3 +51,27 @@ $Footer = dbQuerySingle("footer", "id = 1");
       </div>
     </div>
   </footer>
+
+  <script>
+
+      $(document).ready(function(){
+
+        $("#btnNews").on("click", function(){
+          var email = $("#subscribe-form-2-email").val();
+          
+          if(email != ""){
+            $.ajax({
+                method: "POST",
+                url: "painel/public/api/add-news",
+                data: {email: email},
+                async: false
+            }).done(function (data) {
+                alert("Sua inscrição foi realizada com sucesso.");                
+            });
+          }
+      });
+    
+    });
+    
+    </script>
+

@@ -291,28 +291,6 @@ function getProjetos($projetos){
     <div class="snackbars" id="form-output-global"></div>
     <!-- Javascript-->
     <script src="js/core.min.js"></script>
-    <script src="js/script.js"></script>
-    <script>
-
-      $(document).ready(function(){
-
-        $("#btnNews").on("click", function(){
-          var email = $("#subscribe-form-2-email").val();
-          
-          if(email != ""){
-            $.ajax({
-                method: "POST",
-                url: "painel/public/api/add-news",
-                data: {email: email},
-                async: false
-            }).done(function (data) {
-                alert("Sua inscrição foi realizada com sucesso.");                
-            });
-          }
-      });
-    
-    });
-    
-    </script>
+    <script src="js/script.js"></script>    
   </body>
 </html>
