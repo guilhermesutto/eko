@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Newsletter;
+use App\Contato;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +20,23 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post("add-news", function(){
-    print_r($_POST); exit;
+    $news = new Newsletter;
+    $news->email = $_POST['email'];
+    $news->enviado = 0;
+    $news->save();
+    
+    return response()->json(["sucesso", true]);
+});
+
+Route::post("add-contato", function(){
+    $contato = new Contato;
+    $contato->nome = $_POST['name']." ".$_POST['lastname'];
+    $contato->email = $_POST['email'];
+    $contato->telefone = $_POST['phone'];
+    $contato->mensagem = $_POST['text'];
+    $contato->save();
+    
+    return response()->json(["sucesso", true]);
 });
 
 Route::get("home-banner", "HomeController@frontGetBanner");

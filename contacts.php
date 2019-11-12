@@ -60,37 +60,37 @@ $Banner = dbQuerySingle("banners", "id = 3");
                       <div class="col-md-6 wow-outer">
                         <div class="form-wrap wow fadeSlideInUp">
                           <label class="form-label-outside" for="contact-first-name">First Name</label>
-                          <input class="form-input" id="contact-first-name" type="text" name="name" data-constraints="@Required">
+                          <input class="form-input" id="contact-first-name" type="text" name="name" id="name" data-constraints="@Required">
                         </div>
                       </div>
                       <div class="col-md-6 wow-outer">
                         <div class="form-wrap wow fadeSlideInUp">
                           <label class="form-label-outside" for="contact-last-name">Last Name</label>
-                          <input class="form-input" id="contact-last-name" type="text" name="name" data-constraints="@Required">
+                          <input class="form-input" id="contact-last-name" type="text" name="lastname" id="lastname" data-constraints="@Required">
                         </div>
                       </div>
                       <div class="col-md-6 wow-outer">
                         <div class="form-wrap wow fadeSlideInUp">
                           <label class="form-label-outside" for="contact-email">E-mail</label>
-                          <input class="form-input" id="contact-email" type="email" name="email" data-constraints="@Email @Required">
+                          <input class="form-input" id="contact-email" type="email" name="email" id="email" data-constraints="@Email @Required">
                         </div>
                       </div>
                       <div class="col-md-6 wow-outer">
                         <div class="form-wrap wow fadeSlideInUp">
                           <label class="form-label-outside" for="contact-phone">Phone</label>
-                          <input class="form-input" id="contact-phone" type="text" name="phone" data-constraints="@PhoneNumber">
+                          <input class="form-input" id="contact-phone" type="text" name="phone" id="phone" data-constraints="@PhoneNumber">
                         </div>
                       </div>
                       <div class="col-12 wow-outer">
                         <div class="form-wrap wow fadeSlideInUp">
                           <label class="form-label-outside" for="contact-message">Your Message</label>
-                          <textarea class="form-input" id="contact-message" name="message" data-constraints="@Required"></textarea>
+                          <textarea class="form-input" id="contact-message" name="message" id="text" data-constraints="@Required"></textarea>
                         </div>
                       </div>
                     </div>
                     <div class="group group-middle">
                       <div class="wow-outer"> 
-                        <button class="button button-primary button-winona wow slideInRight" type="submit">Send Message</button>
+                        <button class="button button-primary button-winona wow slideInRight" type="button" id="sendForm">Send Message</button>
                       </div>                      
                     </div>
                   </form>
@@ -138,5 +138,29 @@ $Banner = dbQuerySingle("banners", "id = 3");
     <!-- Javascript-->
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
+    <script>
+    
+      $(document).ready(function(){
+        $("#sendForm").on("click", function(){
+          var name      = $("#name").val();
+          var lastname  = $("#lastname").val();
+          var email = $("#email").val();
+          var phone = $("#phone").val();
+          var text = $("#text").val();
+          
+          if(email != ""){
+            $.ajax({
+                method: "POST",
+                url: "painel/public/api/add-news",
+                data: {email: email, name: name, lastname: lastname, phone: phone, text: text},
+                async: false
+            }).done(function (data) {
+                alert("Seu contato foi enviado com sucesso.");                
+            });
+          }
+        });
+      });
+
+    </script>
   </body>
 </html>
