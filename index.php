@@ -298,7 +298,7 @@ function getProjetos($projetos){
 
         $("#btnNews").on("click", function(){
           var email = $("#subscribe-email").val();
-
+          alert(email);
           if(email != ""){
             $.ajax({
                 method: "POST",
