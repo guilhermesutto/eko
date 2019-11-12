@@ -302,7 +302,7 @@ function getProjetos($projetos){
           if(email != ""){
             $.ajax({
                 method: "POST",
-                url: "painel/add-news",
+                url: "painel/public/add-news",
                 data: {email: email},
                 async: false
             }).done(function (data) {
