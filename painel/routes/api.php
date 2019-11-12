@@ -20,7 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post("add-news", function(){
-    $news = new \Newsletter;
+    $news = new Newsletter;
     $news->email = $_POST['email'];
     $news->enviado = 0;
     $news->save();
@@ -29,7 +29,7 @@ Route::post("add-news", function(){
 });
 
 Route::post("add-contato", function(){
-    $contato = new \Contato;
+    $contato = new Contato;
     $contato->nome = $_POST['name']." ".$_POST['lastname'];
     $contato->email = $_POST['email'];
     $contato->telefone = $_POST['phone'];
