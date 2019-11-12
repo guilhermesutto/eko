@@ -311,6 +311,8 @@ function getProjetos($projetos){
           }
       });
     
+    });
+    
     </script>
   </body>
 </html>
