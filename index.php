@@ -292,5 +292,27 @@ function getProjetos($projetos){
     <!-- Javascript-->
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
+    <script>
+
+      $(document).ready(function(){
+
+        $("#btnNews").on("click", function(
+          var email = $("#subscribe-email").val();
+
+          if(email != ""){
+            $.ajax({
+                method: "POST",
+                url: "painel/add-news",
+                data: {email: email},
+                async: false
+            }).done(function (data) {
+                alert("Sua inscrição foi realizada com sucesso.");                
+            });
+          }
+        ));
+
+      });
+    
+    </script>
   </body>
 </html>

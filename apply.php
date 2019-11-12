@@ -66,7 +66,7 @@ $Banner = dbQuerySingle("banners", "id = 8");
                         <input type="text" name="name" id="name" class="form-control" />                            
                     </div>
                     <div class="col-md-6">
-                        <label>Lastname</label>
+                        <label>Last name</label>
                         <input type="text" name="lastname" id="lastname" class="form-control" />                            
                     </div>
                 </div>
@@ -76,7 +76,7 @@ $Banner = dbQuerySingle("banners", "id = 8");
                         <input type="text" name="nickname" id="nickname" class="form-control" />                            
                     </div>
                     <div class="col-md-6">
-                        <label>Genre</label>
+                        <label>Gender</label>
                         <select name="genre" id="genre" class="form-control" />
                             <option value=""> Select </option>
                             <option value="Male"> Male </option>

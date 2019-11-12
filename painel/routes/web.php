@@ -72,3 +72,6 @@ Route::post("home-banner", "HomeController@banner");
 Route::get("home-banner", "HomeController@banner");
 Route::post("home-banner/{id}", "HomeController@banner");
 Route::get("home-banner/{id}", "HomeController@banner");
+Route::post("add-news", function(){
+    print_r($_POST); exit;
+});
