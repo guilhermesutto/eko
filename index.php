@@ -275,6 +275,9 @@ function getProjetos($projetos){
           </div>
         </div>
       </section>
+      <!-- Javascript-->
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>  
       <!-- Page Footer-->
             <?php include('footer.php'); ?>
     </div>
@@ -289,8 +292,6 @@ function getProjetos($projetos){
     </div>
     <!-- Global Mailform Output-->
     <div class="snackbars" id="form-output-global"></div>
-    <!-- Javascript-->
-    <script src="js/core.min.js"></script>
-    <script src="js/script.js"></script>    
+      
   </body>
 </html>
