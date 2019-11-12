@@ -17,6 +17,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::post("add-news", function(){
+    print_r($_POST); exit;
+});
+
 Route::get("home-banner", "HomeController@frontGetBanner");
 Route::get("home-projects", "HomeController@frontGetProjects");
 Route::get("home-testimonals", "HomeController@frontGetTestimonals");
