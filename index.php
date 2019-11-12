@@ -309,8 +309,6 @@ function getProjetos($projetos){
                 alert("Sua inscrição foi realizada com sucesso.");                
             });
           }
-        ));
-
       });
     
     </script>
