@@ -275,13 +275,9 @@ function getProjetos($projetos){
           </div>
         </div>
       </section>
+      
       <!-- Javascript-->
-    <script src="js/core.min.js"></script>
-    <script src="js/script.js"></script>  
-      <!-- Page Footer-->
-            <?php include('footer.php'); ?>
-    </div>
-    <div class="preloader">
+      <div class="preloader">
       <div class="preloader-body">
         <div class="cssload-container">
           <div class="cssload-double-torus"></div>
@@ -292,6 +288,10 @@ function getProjetos($projetos){
     </div>
     <!-- Global Mailform Output-->
     <div class="snackbars" id="form-output-global"></div>
-      
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>  
+      <!-- Page Footer-->
+            <?php include('footer.php'); ?>
+    </div>      
   </body>
 </html>

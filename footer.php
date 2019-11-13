@@ -34,7 +34,7 @@ $Footer = dbQuerySingle("footer", "id = 1");
             <form class="rd-form rd-mailform form-inline" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
               <div class="form-wrap">
                 <input class="form-input" id="subscribe-email" type="email" name="email" data-constraints="@Email @Required">
-                <label class="form-label" for="subscribe-form-2-email">E-mail</label>
+                <label class="form-label" for="subscribe-form-2-email" id="labl">E-mail</label>
               </div>
               <div class="form-button">
                 <button class="button button-primary button-icon button-icon-only button-winona" id="btnNews" type="button" aria-label="submit"><span class="icon mdi mdi-email-outline"></span></button>
@@ -57,7 +57,7 @@ $Footer = dbQuerySingle("footer", "id = 1");
       $(document).ready(function(){
 
         $("#btnNews").on("click", function(){
-          var email = $("#subscribe-form-2-email").val();
+          var email = $("#subscribe-email").val();
           
           if(email != ""){
             $.ajax({
@@ -69,6 +69,12 @@ $Footer = dbQuerySingle("footer", "id = 1");
                 alert("Sua inscrição foi realizada com sucesso.");                
             });
           }
+      });
+
+      $("#subscribe-email").on("keyup", function(){
+        //alert($(this).length);
+          if($(this).val() != "") $("#labl").hide();
+          else $("#labl").show();
       });
     
     });
