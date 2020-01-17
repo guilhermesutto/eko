@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use App\Newsletter;
 use App\Contato;
+use App\Apply;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +35,23 @@ Route::post("add-contato", function(){
     $contato->email = $_POST['email'];
     $contato->telefone = $_POST['phone'];
     $contato->mensagem = $_POST['text'];
+    $contato->save();
+    
+    return response()->json(["sucesso", true]);
+});
+
+Route::post("add-apply", function(){
+    $contato = new Apply;
+    $contato->name          = $_POST['name']." ".$_POST['lastname'];
+    $contato->email         = $_POST['email'];
+    $contato->phone      = $_POST['phone'];
+    $contato->project       = $_POST['project'];
+    $contato->destination   = $_POST['destination'];
+    $contato->nickname      = $_POST['nickname'];
+    $contato->genre         = $_POST['genre'];
+    $contato->nationality   = $_POST['nationality'];
+    $contato->date          = $_POST['date'];
+    $contato->how           = $_POST['how'];
     $contato->save();
     
     return response()->json(["sucesso", true]);

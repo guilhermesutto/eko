@@ -56,7 +56,7 @@ $Footer = dbQuerySingle("footer", "id = 1");
 
       $(document).ready(function(){
 
-        $("#btnNews").on("click", function(){
+        $("#btnNews").on("click", function(){          
           var email = $("#subscribe-email").val();
           
           if(email != ""){

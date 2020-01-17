@@ -38,7 +38,7 @@
           </a>          
         </li>
         @foreach(App\Areas::where(array('ativo' => 1, 'id_pai' => 0))->orderBy('order_by', 'asc')->get() AS $Area)
-            <?php if($Area->id == 11) continue; ?>
+            <?php //if($Area->id == 11) continue; ?>
             <?php $Area->Subareas = App\Areas::where(array('ativo' => 1, 'id_pai' => $Area->id))->orderBy('order_by', 'asc')->get(); ?>
             <?php $class= ""; if(count($Area->Subareas) > 0) $class="treeview"; ?>
             <li class={{$class}}>

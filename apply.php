@@ -139,8 +139,7 @@ $Banner = dbQuerySingle("banners", "id = 8");
         </div>
         </div>
       </section>
-      <!-- Page Footer-->
-      <?php include('footer.php'); ?>
+      <!-- Page Footer-->     
     </div>
     <div class="preloader">
       <div class="preloader-body">
@@ -220,34 +219,46 @@ $Banner = dbQuerySingle("banners", "id = 8");
 
         function sendForm(){
             
-            var project = $("#project").val();
-            var destination = $("#destination").val();
             var name = $("#name").val();
             var lastname = $("#lastname").val();
+            var email = $("#email").val();
+            var phone = $("#phone").val();
+
+            var project = $("#project").val();
+            var destination = $("#destination").val();            
             var nickname = $("#nickname").val();
             var genre = $("#genre").val();
             var nationality = $("#nationality").val();
-            var date = $("#date").val();
-            var email = $("#email").val();
+            var date = $("#date").val();            
             var how = $("#how").val();
-            var phone = $("#phone").val();
 
             $.ajax({
                 method: "POST",
-                url: "send-email.php",
+                url: "painel/public/api/add-apply",
                 data: {project: project, destination: destination, name: name, lastname: lastname, nickname: nickname, genre: genre, nationality: nationality, date: date, email: email, how: how, phone: phone},
                 async: false
-            })
-                .done(function (data) {
-                if(data == 1) alert("Sua inscrição foi enviada com sucesso, logo entraremos em contato!");
+            }).done(function (data) {
+                if(data) alert("Sua inscrição foi enviada com sucesso, logo entraremos em contato!");
                 else alert("Ocorreu um erro ao enviar sua solicitação, por favor tente novamente mais tarde!");
             });
+                
 
-            //location.reload();
+            // $.ajax({
+            //     method: "POST",
+            //     url: "send-email.php",
+            //     data: {project: project, destination: destination, name: name, lastname: lastname, nickname: nickname, genre: genre, nationality: nationality, date: date, email: email, how: how, phone: phone},
+            //     async: false
+            // }).done(function (data) {
+            //     if(data == 1) alert("Sua inscrição foi enviada com sucesso, logo entraremos em contato!");
+            //     else alert("Ocorreu um erro ao enviar sua solicitação, por favor tente novamente mais tarde!");
+            // });
+
+            location.reload();
 
             return false;
             
         }
     </script>
+     <?php include('footer.php'); ?>
   </body>
 </html>

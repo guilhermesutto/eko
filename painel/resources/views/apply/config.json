@@ -1,0 +1,81 @@
+{
+	"index":
+	{
+		"scripts":
+		[
+			"/eko/painel/public/js/apply.js"
+		],
+
+		"styles":
+		[
+
+		],
+
+		"fields":
+		[
+
+		],
+
+		"modals":
+		[
+
+		],
+
+		"list_fields":
+		{
+			"id":"#",			
+			"name":"Name",
+    		"email":"Email",
+			"phone":"Phone",
+			"project":"Project",
+   			"destination":"Destination",
+   			"nickname":"Nickname",
+   			"genre":"Genre",
+   			"nationality":"Nationality",
+   			"date":"Date",
+   			"how":"How"
+		}
+	},
+
+	"form":
+	{
+		"scripts":
+		[
+			"/eko/painel/public/js/paginas.js"
+		],
+
+		"styles":
+		[
+
+		],
+
+		"fields":
+		[
+			{
+				"label":true,
+				"name":"titulo",
+				"translate":"Título",
+				"type":"text",				
+                "id":"titulo",                
+				"class":"",
+				"validate":""
+			},
+
+			{
+				"label":true,
+				"name":"conteudo",
+				"translate":"Conteúdo",
+				"type":"textarea",				
+                "id":"conteudo",
+                "rows": 10,
+				"class":"",
+				"validate":""
+			}			
+		],
+
+		"modals":
+		[
+
+		]
+	}
+}
